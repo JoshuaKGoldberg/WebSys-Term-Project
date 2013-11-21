@@ -7,7 +7,7 @@ session_start();
 
 // Connect to the database
 try {
-  $dbname = 'lecture18';
+  $dbname = 'users';
   $user = 'root';
   $pass = '';
   $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
