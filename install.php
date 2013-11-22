@@ -53,7 +53,7 @@
   // This contains the entries of books by users
   // * These are also identified by their 13-digit ISBN number
   // * Prices are decimels, as dollars
-  // * Condition may be one of the $bookConditions
+  // * State may be one of the $bookStates
   // * Action may be one of the $bookActions
   // (this should use `isbn` and `user_id` as foreign keys)
   $dbConn->exec('
@@ -63,7 +63,7 @@
       `user_id` INT(10) NOT NULL,
       `name` VARCHAR(127) NOT NULL,
       `price` DECIMAL(19,4),
-      `condition` ENUM(' . makeSQLEnum($bookConditions) . '),
+      `state` ENUM(' . makeSQLEnum($bookStates) . '),
       `action` ENUM(' . makeSQLEnum($bookActions) . '),
       PRIMARY KEY (`entry_id`)
     )

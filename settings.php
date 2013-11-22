@@ -10,7 +10,7 @@
   $dbName = "WebSysProject";
   
   // Book particulars
-  $bookConditions  = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
+  $bookStates  = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
   $bookCondDefault = 'Good';
   $bookActions     = array('Buy', 'Sell', 'Trade', 'Wish');
   $historyRatings  = array('0', '1', '2', '3', '4', '5');
@@ -32,6 +32,12 @@
       echo 'Error creating PDO: ' . $err->getMessage();
     }
     return($conn);
+  }
+  
+  // getPDOStatement($dbConn, $query)
+  // Runs the typical preparation function on the PDO object for a statement
+  function getPDOStatement($dbConn, $query) {
+    return $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
   }
   
   
@@ -62,14 +68,14 @@
   /* Common SQL Queries
   */
   
-  // ensureKeyExists($dbConn, "table", "row", "value")
+  // checkKeyExists($dbConn, "table", "row", "value")
   // Returns whether a key of the value exists under the row, in that table
-  function ensureKeyExists($dbConn, $table, $row, $value) {
+  function checkKeyExists($dbConn, $table, $row, $value) {
     $query = '
       SELECT `' . $row . '` FROM `' . $table . '`
       WHERE `' . $row . '` LIKE :value
     ';
-    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':value' => $value));
     $results = $stmnt->fetch(PDO::FETCH_ASSOC);
     return !empty($results);
@@ -82,7 +88,7 @@
       SELECT `' . $valCol . '` FROM `' . $table . '`
       WHERE `' . $keyCol . '` = :myval
     ';
-    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':myval' => $keyVal));
     $result = $stmnt->fetch(PDO::FETCH_OBJ);
     return $result->$valCol;
@@ -113,7 +119,7 @@
       AND `action` LIKE :action
     ';
     // Create, run, and return a statement from the query
-    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':action' => $action));
     return $stmnt->fetchAll();
   }
@@ -128,7 +134,7 @@
       AND `action` LIKE :action
     ';
     // Create, run, and return a statement from the query
-    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':action' => $action));
     return $stmnt->fetchAll();
   }
