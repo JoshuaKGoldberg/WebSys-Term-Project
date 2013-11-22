@@ -64,7 +64,7 @@
       `name` VARCHAR(127) NOT NULL,
       `price` DECIMAL(19,4),
       `condition` ENUM(' . makeSQLEnum($bookConditions) . '),
-      `action` ENUM(' . makeSQLEnum($bookActions) . ')
+      `action` ENUM(' . makeSQLEnum($bookActions) . '),
       PRIMARY KEY (`entry_id`)
     )
   ');
@@ -87,4 +87,6 @@
       PRIMARY KEY (`event_id`)
     )
   ');
+  
+  echo "hi";
 ?>
