@@ -3,9 +3,58 @@ ul li {
 }
 
 * {
-    font-style:Arial;
+    font-family: 'Doppio One', sans-serif;
+    color:#CC5D25;
+}
+
+a:link {
+    text-decoration:none;
+    color:#AA3D22;
 }
 
 body{
-    background-color:;
+    background-color:#FFFFFF;
+}
+
+#landing p {
+    float:right;
+    padding-top:114px;
+    font-size:2em;
+}
+
+#landing img {
+    float:left;
+}
+
+#landing {
+    padding:20px;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+}
+
+#mainmenu {
+    background-color:#dddddd;
+    clear:both;
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+    padding-left:0;
+    text-align:center;
+}
+#mainmenu li {
+    padding:20px;
+    display:inline;
+    font-size:1.5em;
+}
+
+#title {
+    text-align:center;
+    font-size:4em;
+    padding:3px;
+    background-color:#dddddd;
+}
+
+#title p {
+    margin-top:20px;
 }
