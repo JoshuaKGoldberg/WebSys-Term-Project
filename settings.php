@@ -60,6 +60,22 @@
   /* Common SQL Queries
   */
   
+  // ensureKeyExists("table", "row", "value")
+  // Returns whether a key of the value exists under the row, in that table
+  function ensureKeyExists($table, $row, $value) {
+    $query = '
+      SELECT `' . $row . '` FROM `' . $table . '`
+      WHERE `' . $row . '` LIKE :value
+    ';
+    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CUSTOR  => PDO::CURSOR_FWDONLY));
+    $stmnt->execute(array(':value' => $value));
+    $results = $pQuery1->fetch(PDO::FETCH_ASSOC);
+    return !empty($results);
+  }
+  
+  /* Common SQL Queries (native to our database)
+  */
+  
   // getUserInfo(PDO, #userID)
   // Gets all the info about a user from the database  
   function getUserInfo($dbConn, $userID) {
