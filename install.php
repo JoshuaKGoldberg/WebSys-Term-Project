@@ -58,13 +58,14 @@
   // (this should use `isbn` and `user_id` as foreign keys)
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `entries` (
+      `entry_id` INT(10) NOT NULL AUTO_INCREMENT,
       `isbn` INT(13) NOT NULL,
       `user_id` INT(10) NOT NULL,
       `name` VARCHAR(127) NOT NULL,
       `price` DECIMAL(19,4),
       `condition` ENUM(' . makeSQLEnum($bookConditions) . '),
-      `action` ENUM(' . makeSQLEnum($bookActions) . '),
-      PRIMARY KEY (`isbn`)
+      `action` ENUM(' . makeSQLEnum($bookActions) . ')
+      PRIMARY KEY (`entry_id`)
     )
   ');
   
@@ -86,8 +87,4 @@
       PRIMARY KEY (`event_id`)
     )
   ');
-  
-  print_r(getUserInfo($dbConn, "a123$4+"));
-  print_r(getUserEntries($dbConn, "a1234"));
-  print_r(getUserRating($dbConn, "a1234"));
 ?>

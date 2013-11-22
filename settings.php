@@ -10,9 +10,10 @@
   $dbName = "WebSysProject";
   
   // Book particulars
-  $bookConditions = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
-  $bookActions = array('Buy', 'Sell', 'Trade', 'Wish');
-  $historyRatings = array('0', '1', '2', '3', '4', '5');
+  $bookConditions  = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
+  $bookCondDefault = 'Good';
+  $bookActions     = array('Buy', 'Sell', 'Trade', 'Wish');
+  $historyRatings  = array('0', '1', '2', '3', '4', '5');
   
   
   /* Quick PDO Functions
@@ -62,18 +63,18 @@
   
   // ensureKeyExists("table", "row", "value")
   // Returns whether a key of the value exists under the row, in that table
-  function ensureKeyExists($table, $row, $value) {
+  function ensureKeyExists($dbConn, $table, $row, $value) {
     $query = '
       SELECT `' . $row . '` FROM `' . $table . '`
       WHERE `' . $row . '` LIKE :value
     ';
-    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CUSTOR  => PDO::CURSOR_FWDONLY));
+    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $stmnt->execute(array(':value' => $value));
-    $results = $pQuery1->fetch(PDO::FETCH_ASSOC);
+    $results = $stmnt->fetch(PDO::FETCH_ASSOC);
     return !empty($results);
   }
   
-  /* Common SQL Queries (native to our database)
+  /* Common SQL Gets
   */
   
   // getUserInfo(PDO, #userID)
