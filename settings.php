@@ -21,6 +21,7 @@
   
   // getPDO("dbHost", "dbName", "dbUser", "dbPass")
   // Gets a new PDO object with the given settings
+  // Sample usage: $dbConn = getPDO($dbHost, $dbName, $dbUser, $dbPass);
   function getPDO($dbHost, $dbName, $dbUser, $dbPass) {
     try {
       $conn = new PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUser, $dbPass);
@@ -61,7 +62,7 @@
   /* Common SQL Queries
   */
   
-  // ensureKeyExists("table", "row", "value")
+  // ensureKeyExists($dbConn, "table", "row", "value")
   // Returns whether a key of the value exists under the row, in that table
   function ensureKeyExists($dbConn, $table, $row, $value) {
     $query = '
@@ -72,6 +73,19 @@
     $stmnt->execute(array(':value' => $value));
     $results = $stmnt->fetch(PDO::FETCH_ASSOC);
     return !empty($results);
+  }
+  
+  // getRowValue($dbConn, "table"", "valCol", "keyCol", "keyVal")
+  // Returns the single value at a specified column of a specified row
+  function getRowValue($dbConn, $table, $valCol, $keyCol, $keyVal) {
+    $query = '
+      SELECT `' . $valCol . '` FROM `' . $table . '`
+      WHERE `' . $keyCol . '` = :myval
+    ';
+    $stmnt = $dbConn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmnt->execute(array(':myval' => $keyVal));
+    $result = $stmnt->fetch(PDO::FETCH_OBJ);
+    return $result->$valCol;
   }
   
   /* Common SQL Gets

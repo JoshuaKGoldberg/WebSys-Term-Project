@@ -87,6 +87,4 @@
       PRIMARY KEY (`event_id`)
     )
   ');
-  
-  echo "hi";
 ?>
