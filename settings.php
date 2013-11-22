@@ -11,7 +11,7 @@
   
   // Book particulars
   $bookConditions = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
-  $bookActions = array('Buy', 'Sell', 'Trade');
+  $bookActions = array('Buy', 'Sell', 'Trade', 'Wish');
   $historyRatings = array('0', '1', '2', '3', '4', '5');
   
   

@@ -37,10 +37,12 @@
   // 3. Create the `books` table
   // This refers to the known information on a book
   // * These are identified by their 13-digit ISBN number
+  // * The authors list is split by endline characters
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `books` (
       `isbn` INT(13) NOT NULL,
       `name` VARCHAR(127),
+      `authors` VARCHAR(255),
       `genre` VARCHAR(127),
       `edition` VARCHAR(127),
       PRIMARY KEY (`isbn`)
