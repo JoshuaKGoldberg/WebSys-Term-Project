@@ -78,7 +78,7 @@
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `history` (
       `event_id` INT(10) NOT NULL AUTO_INCREMENT,
-      `timestamp` TIMESTAMP NOT NULL,
+      `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
       `user_rater` INT(10) NOT NULL,
       `user_rated` INT(10) NOT NULL,
       `user_rating` ENUM(' . makeSQLEnum($historyRatings) . '),

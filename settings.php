@@ -9,12 +9,23 @@
   $dbPass = "";
   $dbName = "WebSysProject";
   
-  // Book particulars
+  /* Book particulars
+  */
+  
   $bookStates  = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
   $bookCondDefault = 'Good';
   $bookActions     = array('Buy', 'Sell', 'Trade', 'Wish');
   $historyRatings  = array('0', '1', '2', '3', '4', '5');
   
+  // getActionOpposite("action")
+  // Returns the opposite action (like Buy / Sell) for a transaction
+  function getActionOpposite($action) {
+    switch($action) {
+      case 'Buy': return 'Sell';
+      // Currently there are no others.
+      default: return $action;
+    }
+  }
   
   /* Quick PDO Functions
   */
@@ -93,6 +104,7 @@
     $result = $stmnt->fetch(PDO::FETCH_OBJ);
     return $result->$valCol;
   }
+  
   
   /* Common SQL Gets
   */
