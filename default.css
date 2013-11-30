@@ -1,0 +1,131 @@
+html, body { margin: 0; }
+html, footer { background-color: #565656; }
+body { background-color: #fefffc; }
+
+
+h1, h2, h3 {
+  font-family: 'Doppio One';
+  text-shadow: 0 0 3px #fed;
+}
+
+/* Header
+*/
+header {
+  height: 84px;
+  background-color: #eee;
+  display: table;
+  width: 100%;
+}
+header h1 {
+  margin: 0;
+  padding-bottom: 7px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  color: #CC5D25;
+}
+
+/* General sections
+ * http://blog.themeforest.net/tutorials/vertical-centering-with-css/
+*/
+section {
+  width: 100%;
+  height: 385px;
+  display: table;
+  color: #222;
+}
+section .aligner {
+  display: table-cell;
+  vertical-align: middle;
+  padding-bottom: 21px;
+}
+section .container {
+  width: 819px;
+  height: 100%;
+  display: table;
+  margin: auto;
+}
+section .text {
+  display: table-cell;
+  vertical-align: middle;
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+section:nth-of-type(2n) {
+  background: #565656;
+  color: #eee;
+  /* box-shadow: 0 0 117px #ddd; */
+}
+section:nth-of-type(2n+1) {
+  /* box-shadow: 0 0 117px #777; */
+}
+section:first-of-type { 
+  height: 434px;
+  border-top: 7px solid white;
+}
+section h1 {
+  margin: auto;
+  font-size: 63px;
+}
+
+/* Main page's first section
+*/
+#center .container {
+  margin-bottom: -28px;
+  width: 1050px;
+  background: url('logo.jpg') left center no-repeat;
+}
+#center .text {
+  padding-left: 305px;
+}
+/* Sign up / log in button
+*/
+#button {
+  margin: auto;
+  margin-bottom: 70px;
+  width: 310px;
+  height: 49px;
+  padding-top: 3px;
+  background: #333349;
+  border-radius: 21px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+#button_inside {
+  position: relative;
+}
+#button .half {
+  width: 50%;
+  /* padding-left: 7px; */
+  position: absolute;
+}
+#button .half:nth-of-type(2) {
+  right: 0;
+  padding-left: 0;
+  border-left: 1px solid white;
+}
+
+/* Footer
+*/
+footer {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 1.26em;
+  color: white;
+  border-top: 7px solid #ccc;
+  /* ColorZilla gradient */
+  background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
+}
+
+footer hr {
+  width: 350px;
+  border: 1px dashed #ccc;
+}
