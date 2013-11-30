@@ -3,11 +3,17 @@
    * Stores the database settings, such as host and table names
   */
   
+  // Database info lookups
+  function getDBHost() { return "localhost"; }
+  function getDBUser() { return "root"; }
+  function getDBPass() { return ""; }
+  function getDBName() { return "WebSysProject"; }
+  
   // Database info
-  $dbHost = "localhost";
-  $dbUser = "root";
-  $dbPass = "";
-  $dbName = "WebSysProject";
+  $dbHost = getDBHost();
+  $dbUser = getDBUser();
+  $dbPass = getDBPass();
+  $dbName = getDBName();
   
   /* Book particulars
   */
@@ -35,15 +41,23 @@
   // Sample usage: $dbConn = getPDO($dbHost, $dbName, $dbUser, $dbPass);
   function getPDO($dbHost, $dbName, $dbUser, $dbPass) {
     try {
-      $conn = new PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUser, $dbPass);
+      $dbConn = new PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUser, $dbPass);
       // This helps with debugging (enables the PDOExceptions)
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } 
     catch(PDOException $err) {
       echo 'Error creating PDO: ' . $err->getMessage();
+      $dbConn = false;
     }
-    return($conn);
+    return $dbConn;
   }
+  
+  // getPDOQuick)
+  // Gets a new PDO object with the default settings
+  // Sample usage: $dbConn = getPDOQuick();
+  function getPDOQuick() {
+    return getPDO(getDBHost(), getDBName(), getDBUser(), getDBPass());
+  } 
   
   // getPDOStatement($dbConn, $query)
   // Runs the typical preparation function on the PDO object for a statement

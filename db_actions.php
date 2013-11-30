@@ -5,7 +5,6 @@
    * might be above the above the scope of what
    * the team is willing to deal with.
   */
-  
   require_once('settings.php');
   
   /* User Functions
@@ -32,7 +31,7 @@
     $stmnt->execute(array(':identity' => $identity));
     
     // Get the results
-    return $stmnt->fetchAll();
+    return $stmnt->fetch();
   }
 
   // dbUsersAdd("username", "password", "email", #role)
@@ -49,20 +48,25 @@
       return false;
     }
     
+    // Create the password, salt and all
+    $salt = hash('sha256', uniqid(mt_rand(), true));
+    $salted = hash('sha256', $salt . $password);
+    
     // Run the insertion query
     $query = '
       INSERT INTO  `users` (
-        `username`, `password`, `email`, `role`
+        `username`, `password`, `email`, `role`, `salt`
       )
       VALUES (
-        :username,  :password, :email, :role
+        :username,  :password, :email, :role, :salt
       )
     ';
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':username' => $username,
-                          ':password' => $password,
+                          ':password' => $salted,
                           ':email'    => $email,
-                          ':role'     => $role));
+                          ':role'     => $role,
+                          ':salt'     => $salt));
   }
   
   // dbUsersRemove("identity"[, "type"])
@@ -144,6 +148,7 @@
                           ':edition' => $edition));
   }
   
+  // (missing Remove)
   
   /* Entries Functions
   */
@@ -272,4 +277,6 @@
                           ':rating'      => $rating,
                           ':action'      => $action));
   }
+  
+  // (missing Get, Remove)
 ?>
