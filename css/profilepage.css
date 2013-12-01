@@ -36,7 +36,7 @@ but it kept moving the title over so i sorta gave up*/
     padding-top:12px;
     padding-bottom:12px;
     position:absolute;
-    width:10%;
+    width:192px;
 }
 
 #badge p {
@@ -70,11 +70,17 @@ but it kept moving the title over so i sorta gave up*/
     z-index:2;
 }
 
+#listwrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:70em;
+}
+
 .booklist {
     font-family: 'Doppio One';
     padding:10px;
     margin-top:15px;
-    width:400px;
+    width:30em;
 
 }
 
@@ -82,17 +88,36 @@ but it kept moving the title over so i sorta gave up*/
   float:left;
   background-color:#CC5D25;
   color:#eee;
-  margin-left:25%;
 }
 
 #tradelist {
   float:right;
   background-color:#eee;
-  margin-right:25%;
+  color:#CC5D25;
+}
+
+#listitem {
+  margin-left:10px;
+  margin-right:10px;
+  padding:10px;
+  background-color:#003162;
+}
+
+#listitem p {
+  text-align:right;
+}
+
+#listitem img {
+  vertical-align: center;
+  float:left;
 }
 
 footer {
   clear:both;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  width:100%;
   padding: 14px 0;
   text-align: center;
   font-size: 1.26em;

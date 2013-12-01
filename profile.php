@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="badge">
-        <img src="profile-photo-placeholder.jpg" alt="" height="60" width="60">
+        <img src="/images/profile-photo-placeholder.jpg" alt="" height="60" width="60">
         <p>Name</p>
         <p>Major/Year</p>
         <p>Email</p>
@@ -21,15 +21,28 @@
         <input type="search" placeholder="Search">
         <button type="submit" class="pure-button">Search</button>
     </form>
-
-    <section id="wishlist" class="booklist">
-        <h3>Books you want:</h3>
-        <p>Nothing here yet!</p>
-    </section>
-    <section id="tradelist" class="booklist">
-        <h3>Books you're trading:</h3>
-        <p>Nothing here yet!</p>
-    </section>
+    <div id="listwrapper">
+        <section id="wishlist" class="booklist">
+            <h3>Books you want:</h3>
+                <div id="listitem">
+                    <!-- i will write up a PHP snippet that will iterate through the database and
+                         make an entry for each book in the list -->
+                    <img src="/images/book-cover-placeholder.png" height="86" width="86">
+                    <p>Title</p>
+                    <p>ISBN</p>
+                </div>
+        </section>
+        <section id="tradelist" class="booklist">
+            <h3>Books you're trading:</h3>
+                <div id="listitem">
+                    <!-- i will write up a PHP snippet that will iterate through the database and
+                         make an entry for each book in the list -->
+                    <img src="/images/book-cover-placeholder.png" height="86" width="86">
+                    <p>Title</p>
+                    <p>ISBN</p>
+                </div>
+        </section>
+    </div>
 
 
     <footer>
