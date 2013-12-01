@@ -1,6 +1,6 @@
 <?php
   require_once('php/settings.php');
-  require_once('php/html_help.php');
+  require_once('php/html_helpers.php');
   session_start();
   // If the user is already logged in, don't bother with this page    
   if(isset($_SESSION['Logged In']) && $_SESSION['Logged In'])
@@ -11,13 +11,12 @@
   <head>
     <title>Book Exchange</title>
     <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <h1>book exchange or something idk</h1>
-    </header>
+    <?php html_print_header(); ?>
     
     <!-- Section 1 (main slogan) -->
     <section id="center">

@@ -1,6 +1,6 @@
 <?php
   require_once('php/settings.php');
-  require_once('php/html_help.php');
+  require_once('php/html_helpers.php');
   session_start();
   // If the user isn't logged in, don't bother with this page    
   if(!isset($_SESSION['Logged In']) || !$_SESSION['Logged In'])
@@ -15,9 +15,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <h1>book exchange or something idk</h1>
-    </header>
+    <?php html_print_header(); ?>
   
   
   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>

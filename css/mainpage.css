@@ -1,0 +1,148 @@
+
+/* General sections
+ * http://blog.themeforest.net/tutorials/vertical-centering-with-css/
+*/
+section {
+  padding-bottom: 7px;
+  width: 100%;
+  height: 434px;
+  display: table;
+  color: #222;
+}
+section .aligner {
+  display: table-cell;
+  vertical-align: middle;
+  padding-bottom: 21px;
+}
+section .container {
+  width: 819px;
+  height: 100%;
+  display: table;
+  margin: auto;
+}
+section .text {
+  display: table-cell;
+  vertical-align: middle;
+  margin-bottom: 14px;
+  font-size: 28px;
+}
+section:nth-of-type(2n) {
+  background: #565656;
+  color: #eee;
+  /* box-shadow: 0 0 117px #ddd; */
+}
+section:nth-of-type(2n+1) {
+  /* box-shadow: 0 0 117px #777; */
+}
+section h1 {
+  margin: auto;
+  font-size: 63px;
+}
+section p, section .justified {
+  text-align: justify;
+}
+
+/* 50% width sections
+*/
+section .half {
+  width: 49%;
+  /* padding-left: 7px; */
+  /* position: absolute; */
+  float: left;
+}
+section .half:nth-of-type(2) {
+  /* right: 0; */
+  padding-left: 0;
+  float: right;
+}
+
+/* Main page's first section
+*/
+#center .container {
+  margin-bottom: -70px;
+  margin-top: -70px;
+  width: 1050px;  
+  background: url('/images/logo.jpg') left center no-repeat;
+}
+#center .text {
+  padding-left: 305px;
+}
+/* Sign up / log in button
+*/
+#login_form {
+  /* margin-top: 140px; */
+  /* position: absolute; */
+}
+#login_form_inside {
+  margin: auto;
+  padding-left: 189px;
+  padding-top: 21px;
+  width: 630px;
+  text-align: left;
+}
+#login_form_inside input {
+  font-size: 28px;
+}
+#login_form_inside input[type=submit] {
+  display: inline-block;
+  width: 175px;
+  height: 56px;
+  font-weight: bold;
+}
+#login_form_inside input#forgot[type=submit] {
+  margin: 7px 0 0 7px;
+  width: 280px;
+  font-weight: normal;
+  background-color: #494963;
+}
+#login_form_inside aside {
+  font-size: 28px;
+}
+#login_form_inside aside a {
+  color: black;
+}
+
+/* Signup section
+*/
+#signup .input_holder {
+  margin: -2px 0 17px 0;
+}
+
+#signup aside {
+  display: inline;
+  font-style: italic;
+  font-size: 24px;
+}
+
+#pledge {
+  margin-top: -7px;
+}
+#pledge a, #login_form_inside a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+}
+/* Signup complaints
+*/
+.hold_complaint {
+  display: inline;
+}
+.complaint {
+  position: absolute;
+  display: inline;
+  margin: -7px 0 0 14px;
+  padding: 7px 14px 7px 35px;
+  border-radius: 100% 28px 35px 84%;
+  background: #212121;
+  box-shadow: 0 0 11px #ff7;
+  color: #ffd;
+  cursor: default;
+  font-size: 21px;
+  font-style: italic;
+}
+.complaint b { font-size: 24px; }
+.complaint.severe {
+  box-shadow: 0 0 14px 3px #f77;
+  color: #fdd;
+}
