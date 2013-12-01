@@ -67,6 +67,7 @@
                           ':email'    => $email,
                           ':role'     => $role,
                           ':salt'     => $salt));
+    return true;
   }
   
   // dbUsersRemove("identity"[, "type"])

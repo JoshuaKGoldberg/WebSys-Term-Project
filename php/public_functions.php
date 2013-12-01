@@ -27,7 +27,12 @@
     $username = $arguments['username'];
     $password = $arguments['password'];
     $email = $arguments['email'];
-    return dbUsersAdd($dbConn, $username, $password, $email, 0);
+    
+    // Make sure the arguments aren't blank
+    if(!$username || !$password || !$email) return;
+    
+    if(dbUsersAdd($dbConn, $username, $password, $email, 0))
+      echo 'Yes';
   }
   
   // publicLogin({...})
@@ -38,7 +43,7 @@
   function publicLogin($arguments) {
     $username = $arguments['username'];
     $password = $arguments['password'];
-    loginAttempt($username, $password);
-    print_r($_SESSION);
+    if(loginAttempt($username, $password))
+      echo 'Yes';
   }
 ?>

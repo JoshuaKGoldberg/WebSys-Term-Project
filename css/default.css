@@ -1,11 +1,11 @@
 html, body { margin: 0; }
 html, footer { background-color: #565656; }
-body { background-color: #fefffc; }
+body { background-color: #fdfdfd; }
 
 
 h1, h2, h3 {
   font-family: 'Doppio One';
-  text-shadow: 0 0 3px #fed;
+  text-shadow: 0 0 3px #eee;
 }
 
 /* Header
@@ -90,13 +90,14 @@ input {
   border-radius: 7px;
   font-size: 21px;
   font-family: serif;
+  outline: 0;
 }
 input[type='submit'] {
   width: 100%;
   height: 70px;
   border-radius: 14px;
-  background-color: #353549;
-  color: #fffff7;
+  background-color: #424242;
+  color: #fefefe;
   font-size: 35px;
   font-style: italic;
   font-family: serif;
@@ -142,6 +143,12 @@ input[type='submit'] {
   font-weight: normal;
   background-color: #494963;
 }
+#login_form_inside aside {
+  font-size: 28px;
+}
+#login_form_inside aside a {
+  color: black;
+}
 
 /* Signup section
 */
@@ -158,7 +165,7 @@ input[type='submit'] {
 #pledge {
   margin-top: -7px;
 }
-#pledge a {
+#pledge a, #login_form_inside a {
   text-decoration: none;
   font-weight: bold;
   font-size: 28px;

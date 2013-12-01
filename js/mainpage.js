@@ -63,14 +63,15 @@ function joinCheckValid(name, value, length) {
 
 // Run when the signup script finishes
 function joinComplete(text) {
-  // If text is blank, it was successful
-  if(!text) {
+  // If the result is 'Yes', it was successful
+  if(text == 'Yes') {
     var message = "Your user account has successfully been created! ";
     message += "You should be redirected to ";
     message += "<a href='/account.php'>your account page</a>";
     message += " shortly; if not, click that link.";
     $("#pledge").html("<aside>" + message + "</aside>");
     $("#submit").remove();
+    window.location='account.php';
   }
   // Otherwise text contains the error
   else {
@@ -95,5 +96,20 @@ function loginSubmit(event) {
 }
 
 function loginComplete(text) {
-  alert(text);
+  // If the result is 'Yes', it was successful
+  if(text == 'Yes') {
+    var message = "You've successfully logged in! ";
+    message += "You should be redirected to ";
+    message += "<a href='/account.php'>your account page</a>";
+    message += " shortly; if not, click that link.";
+    $("#login_form_inside").html("<aside>" + message + "</aside>");
+    window.location='account.php';
+  }
+  // Otherwise the information was incorrect
+  else {
+    $("#login_form_inside input:not([type=submit])")
+      .css("background-color", "#fee")
+      .css("border", "1px solid #733");
+    $("#logmein").val("try again!");
+  }
 }

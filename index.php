@@ -1,6 +1,10 @@
 <?php
   require_once('php/settings.php');
   require_once('php/html_help.php');
+  session_start();
+  // If the user is already logged in, don't bother with this page    
+  if(isset($_SESSION['Logged In']) && $_SESSION['Logged In'])
+    header('Location: account.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,20 +27,18 @@
             <h1>Find textbooks to sell and trade, on your campus.</h1>
           </div>
         </div>
-      
-        <!-- Sign up / Log in -->
+        <!-- Log in -->
         <div id="login_form">
           <div id="login_form_inside">
-            <form onsubmit="loginSubmit(event); event.preventDefault();">
+            <form onsubmit="event.preventDefault(); loginSubmit(event);">
               <input id="myusername" type='text' name='username' placeholder='username' />
-              <input id="mypassword" type='text' name='password' placeholder='password' />
-              <input type='submit' value='log me in!' />
+              <input id="mypassword" type='password' name='password' placeholder='password' />
+              <input id="logmein" type='submit' value='log me in!' />
               <input style='opacity:.14' id="forgot" type='submit' value='forgot my password' />
             </form>
           </div>
         </div>
       </div>
-    
     </section>
     
     <!-- Section 2 (sign up) -->
@@ -46,7 +48,7 @@
           <div class="text">
             <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. It's free to join, so you might as well...</p>
             <div class="half">
-              <form onsubmit="joinSubmit(); event.preventDefault();">
+              <form onsubmit="event.preventDefault(); joinSubmit();">
                 <div id="hold_username" class='input_holder'>
                   <input id="username" type='text' name='username' placeholder='username' />
                   <aside>username</aside>
