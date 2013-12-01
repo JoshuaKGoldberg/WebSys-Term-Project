@@ -94,4 +94,5 @@
   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
   <script type="text/javascript" src="js/mainpage.js"></script>
   <script type="text/javascript" src="js/requests.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
 </html>

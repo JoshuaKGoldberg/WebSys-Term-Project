@@ -6,11 +6,17 @@
   // General site info
   function getSiteName() { return "book exchange or something idk"; }
   
-  // Database info
+  // Database info lookups
   function getDBHost() { return "localhost"; }
   function getDBUser() { return "root"; }
   function getDBPass() { return ""; }
   function getDBName() { return "WebSysProject"; }
+  
+  // Database info
+  $dbHost = getDBHost();
+  $dbUser = getDBUser();
+  $dbPass = getDBPass();
+  $dbName = getDBName();
   
   // Google API
   function getGoogleKey() { return "AIzaSyD2FxaIBhdLTA7J6K5ktG4URdCFmQZOCUw"; }
@@ -18,7 +24,7 @@
   
   // Names of functions that may be called by functions.php
   $allowed_functions = array(
-    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook'
+    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook', 'publicSearch'
   );
   foreach($allowed_functions as $name)
     $allowed_functions[$name] = true;

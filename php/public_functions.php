@@ -80,22 +80,49 @@
       return;
     $info = $book->volumeInfo;
     
-    // Don't continue if the name or authors are missing or blank
+    // Don't continue if the title or authors are missing or blank
     if(!isset($info->title) || !isset($info->authors))
       return;
       
-    $name = $info->title;
+    $title = $info->title;
     $authors = $info->authors;
     $description = isset($info->description) ? explode("\n", $info->description)[0] : "";
     $publisher = isset($info->publisher) ? $info->publisher : "";
     $year = isset($info->publishedDate) ? $info->publishedDate : "";
     $pages = isset($info->pageCount) ? $info->pageCount : "";
     
-    // Name and authors can't be blank, but other fields can be
-    if(!$name || !$authors)
+    // Title and authors can't be blank, but other fields can be
+    if(!$title || !$authors)
       return;
     
-    if(dbBooksAdd($dbConn, $isbn, $name, $authors, $description, $publisher, $year, $pages) && !$noverbose)
+    if(dbBooksAdd($dbConn, $isbn, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose)
       echo 'Yes';
+  }
+
+  // publicSearch({...})
+  // Runs a search for a given value on a given field
+  // Required fields:
+  // * "column"
+  // * "value"
+  // This needs protection against SQL injections
+  function publicSearch($arguments, $noverbose=false) {
+    $dbConn = $_SESSION['dbConn'];
+    $column = $arguments['column'];
+    $value = '%' . $arguments['value'] . '%';
+    
+    // Prepare the initial query
+    $query = '
+      SELECT * FROM `books`
+      WHERE `' . $column . '` LIKE :value
+    ';
+    
+    // Run the query
+    $stmnt = getPDOStatement($dbConn, $query);
+    $durp = $stmnt->execute(array(':value' => $value));
+    
+    
+    // Return a JSON encoding of the results
+    $result = $stmnt->fetchAll(PDO::FETCH_ASSOC);
+    echo $column . " " . json_encode($result);
   }
 ?>

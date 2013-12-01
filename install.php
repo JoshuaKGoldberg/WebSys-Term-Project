@@ -47,7 +47,7 @@
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `books` (
       `isbn` VARCHAR(15) NOT NULL,
-      `name` VARCHAR(127),
+      `title` VARCHAR(127),
       `authors` VARCHAR(255),
       `description` VARCHAR(1023),
       `publisher` VARCHAR(127),

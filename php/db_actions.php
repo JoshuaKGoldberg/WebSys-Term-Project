@@ -117,11 +117,11 @@
     return $stmnt->fetch(PDO::FETCH_ASSOC);
   }
   
-  // dbBooksAdd(#isbn, "name", "authors", "description", "publisher", "year", "pages")
+  // dbBooksAdd(#isbn, "title", "authors", "description", "publisher", "year", "pages")
   // Adds a book to `books`
   // Authors may be given as an array or string (separated by endlines)
-  // Sample usage: dbBooksAdd($dbConn, $isbn, $name, $authors, $genre);
-  function dbBooksAdd($dbConn, $isbn, $name, $authors, $description, $publisher, $year, $pages) {
+  // Sample usage: dbBooksAdd($dbConn, $isbn, $title, $authors, $genre);
+  function dbBooksAdd($dbConn, $isbn, $title, $authors, $description, $publisher, $year, $pages) {
     // Ensure the isbn doesn't already exist
     if(checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
       echo 'The ISBN already exists: ' . $isbn;
@@ -135,15 +135,15 @@
     // Run the insertion query
     $query = '
       INSERT INTO  `books` (
-        `isbn`, `name`, `authors`, `description`, `publisher`, `year`, `pages`
+        `isbn`, `title`, `authors`, `description`, `publisher`, `year`, `pages`
       )
       VALUES (
-        :isbn,  :name, :authors, :description, :publisher, :year, :pages
+        :isbn,  :title, :authors, :description, :publisher, :year, :pages
       )
     ';
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':isbn'        => $isbn,
-                          ':name'        => $name,
+                          ':title'       => $title,
                           ':authors'     => $authors,
                           ':description' => $description,
                           ':publisher'   => $publisher,
@@ -202,21 +202,21 @@
       return false;
     }
     
-    // Query more information on the book (really just the name)
-    $book_name = getRowValue($dbConn, 'books', 'name', 'isbn', $isbn);
+    // Query more information on the book (really just the title)
+    $book_title = getRowValue($dbConn, 'books', 'title', 'isbn', $isbn);
     
     // Run the insertion query
     $query = '
       INSERT INTO `entries` (
-        `isbn`, `user_id`, `name`, `price`, `state`, `action`
+        `isbn`, `user_id`, `title`, `price`, `state`, `action`
       ) VALUES (
-        :isbn, :user_id, :name, :price, :state, :action
+        :isbn, :user_id, :title, :price, :state, :action
       )
     ';
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':isbn'      => $isbn,
                           ':user_id'   => $user_id,
-                          ':name'      => $book_name,
+                          ':title'     => $book_title,
                           ':price'     => $price,
                           ':state'     => $state,
                           ':action'    => $action));
