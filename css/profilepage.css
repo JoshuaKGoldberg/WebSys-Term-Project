@@ -1,0 +1,66 @@
+html, body { margin: 0; }
+body { background-color: #fefffc; }
+
+h1, h2, h3 {
+  font-family: 'Doppio One';
+  text-shadow: 0 0 3px #fed;
+}
+
+header {
+  height: 84px;
+  background-color: #eee;
+  display: table;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  padding-bottom: 7px;
+  text-align:center;
+  display: table-cell;
+  vertical-align: middle;
+  color: #CC5D25;
+}
+
+/* tried hard to get the badge to display how I wanted without using position:absolute;
+but it kept moving the title over so i sorta gave up*/
+
+#badge {
+    background-color:#CC5D25;
+    text-align:right;
+    padding-top:12px;
+    padding-bottom:12px;
+    position:absolute;
+    width:10%;
+}
+
+#badge p {
+    margin:0;
+    font-family: 'Doppio One';
+    padding-right:10px;
+}
+
+#badge img {
+    float:left;
+    padding-left:10px;
+}
+
+.pure-button {
+    background-color:#CC5D25;
+    font-family: 'Doppio One';
+}
+
+::-webkit-input-placeholder{
+    font-family: 'Doppio One';
+}
+
+/* same problem here as with the badge */
+
+#search {
+    position:absolute;
+    right:0px;
+    top:0px;
+    padding-right:10px;
+    padding-top:24px;
+    z-index:2;
+}
