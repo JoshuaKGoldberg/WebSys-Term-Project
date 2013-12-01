@@ -147,6 +147,12 @@ section .half:nth-of-type(2) {
 #pledge {
   margin-top: -7px;
 }
+#pledge a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+}
 /* Signup complaints
 */
 .hold_complaint {
@@ -162,8 +168,10 @@ section .half:nth-of-type(2) {
   box-shadow: 0 0 11px #ff7;
   color: #ffd;
   cursor: default;
-  font-size: 24px;
+  font-size: 21px;
+  font-style: italic;
 }
+.complaint b { font-size: 24px; }
 .complaint.severe {
   box-shadow: 0 0 14px 3px #f77;
   color: #fdd;

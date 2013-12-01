@@ -45,16 +45,16 @@
       <div class="aligner">
         <div class="container">
           <div class="text">
-            <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. It's free to join, you might as well sign.</p>
+            <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. It's free to join, so you might as well...</p>
             <div class="half">
-              <form onsubmit="return joinSubmit()">
+              <form onsubmit="joinSubmit(); return false;">
                 <div id="hold_username" class='input_holder'>
                   <input id="username" type='text' name='username' placeholder='username' />
                   <aside>username</aside>
                   <div class="hold_complaint"></div>
                 </div>
                 <div id="hold_password" class='input_holder'>
-                  <input id="password" type='text' name='password' placeholder='password' />
+                  <input id="password" type='password' name='password' placeholder='password' />
                   <aside>password</aside>
                   <div class="hold_complaint"></div>
                 </div>
@@ -63,7 +63,7 @@
                   <aside>email</aside>
                   <div class="hold_complaint"></div>
                 </div>
-                <input type='submit' value='Sign Me Up!'/>
+                <input id="submit" type='submit' value='Sign Me Up!'/>
               </form>
             </div>
             <div id="pledge" class="half justified">
