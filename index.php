@@ -12,7 +12,7 @@
     <title>Book Exchange</title>
     <link rel="stylesheet" type="text/css" href="css/default.css">
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-    </head>
+  </head>
   <body>
     <!-- Header -->
     <header>

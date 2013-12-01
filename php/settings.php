@@ -15,9 +15,15 @@
   $dbPass = getDBPass();
   $dbName = getDBName();
   
+  // Google API
+  function getGoogleKey() { return "AIzaSyD2FxaIBhdLTA7J6K5ktG4URdCFmQZOCUw"; }
+  $googleKey = getGoogleKey();
+  
+  $sample_isbns = array('9780073523323', '9780072463521', '9780199959570', '9780130673893', '9780873895620', '9780073341521', '9780470458365', '9780538733519', '9780470115398', '9780123850737', '9780070168930', '9780538482127', '9781893281080', '9780273713630', '9780132168380', '9781422162606', '9789970086979', '9780133063004', '9780078029103', '9781133586548', '9780521148436', '9780521066013', '9780393310351', '9781608193387', '9780133020267', '9780133058789', '9780078112621');
+  
   // Names of functions that may be called by functions.php
   $allowed_functions = array(
-    'publicLogin', 'publicCheckValidity', 'publicCreateUser'
+    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook'
   );
   foreach($allowed_functions as $name)
     $allowed_functions[$name] = true;
@@ -170,5 +176,25 @@
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':action' => $action));
     return $stmnt->fetchAll();
+  }
+
+  
+  /* Other Utilities
+  */
+  
+  // getHTTPPage("url")
+  // Runs a cURL request on a page, returning the result
+  function getHTTPPage($url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 7);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+    $data = curl_exec($ch);
+    if($data === FALSE)
+      echo curl_error($ch);
+    curl_close($ch);
+    return $data;
   }
 ?>

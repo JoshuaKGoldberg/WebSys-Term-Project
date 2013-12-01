@@ -117,36 +117,40 @@
     return $stmnt->fetch(PDO::FETCH_ASSOC);
   }
   
-  // dbBooksAdd(#isbn, "name", ["authors"], "genre", #edition)
+  // dbBooksAdd(#isbn, "name", "authors", "description", "publisher", "year", "pages")
   // Adds a book to `books`
   // Authors may be given as an array or string (separated by endlines)
   // Sample usage: dbBooksAdd($dbConn, $isbn, $name, $authors, $genre);
-  function dbBooksAdd($dbConn, $isbn, $name, $authors, $genre, $edition=1) {
+  function dbBooksAdd($dbConn, $isbn, $name, $authors, $description, $publisher, $year, $pages) {
     // Ensure the isbn doesn't already exist
     if(checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
-      echo 'The ISBN already exists: ' . $user_id;
+      echo 'The ISBN already exists: ' . $isbn;
       return false;
     }
     
     // Convert the $authors argument if needed
-    if(isarray($authors))
+    if(is_array($authors))
       $authors = implode($authors, '\n');
     
     // Run the insertion query
     $query = '
       INSERT INTO  `books` (
-        `isbn`, `name`, `authors`, `genre`, `edition`
+        `isbn`, `name`, `authors`, `description`, `publisher`, `year`, `pages`
       )
       VALUES (
-        :isbn,  :name, :authors, :genre, :edition
+        :isbn,  :name, :authors, :description, :publisher, :year, :pages
       )
     ';
     $stmnt = getPDOStatement($dbConn, $query);
-    $stmnt->execute(array(':isbn'    => $isbn,
-                          ':name'    => $name,
-                          ':authors' => $authors,
-                          ':genre'   => $genre,
-                          ':edition' => $edition));
+    $stmnt->execute(array(':isbn'        => $isbn,
+                          ':name'        => $name,
+                          ':authors'     => $authors,
+                          ':description' => $description,
+                          ':publisher'   => $publisher,
+                          ':year'        => $year,
+                          ':pages'       => $pages));
+    
+    return true;
   }
   
   // (missing Remove)

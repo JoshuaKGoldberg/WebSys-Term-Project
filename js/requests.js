@@ -18,5 +18,5 @@ function sendRequest(func_name, settings, callback) {
   // Create and return the jqXHR object
   return $.ajax({
     url: url
-  }).done(callback);
+  }).done(callback || function() {});
 }

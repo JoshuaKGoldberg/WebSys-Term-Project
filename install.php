@@ -8,6 +8,7 @@
    * 4. Create the `history` table
   */
   require_once('php/settings.php');
+  require_once('php/public_functions.php');
   
   // Get a connection to the server (no specific database yet)
   $dbConn = getPDO($dbHost, '', $dbUser, $dbPass);
@@ -18,6 +19,10 @@
   )->execute();
   // From now on, everything will be in that database
   $dbConn->exec('USE ' . $dbName);
+  
+  // Make sure $_SESSION['dbConn'] exists
+  session_start();
+    $_SESSION['dbConn'] = $dbConn;
   
   // 2. Create the `users` table
   // * These are identified by the user_id int
@@ -38,16 +43,23 @@
   // This refers to the known information on a book
   // * These are identified by their 13-digit ISBN number
   // * The authors list is split by endline characters
+  // description`, `publisher`, `year
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `books` (
-      `isbn` INT(13) NOT NULL,
+      `isbn` VARCHAR(15) NOT NULL,
       `name` VARCHAR(127),
       `authors` VARCHAR(255),
-      `genre` VARCHAR(127),
-      `edition` VARCHAR(127),
+      `description` VARCHAR(1023),
+      `publisher` VARCHAR(127),
+      `year` VARCHAR(15),
+      `pages` VARCHAR(7),
       PRIMARY KEY (`isbn`)
     )
   ');
+  // Also fill it with the default books
+  foreach($sample_isbns as $isbn) {
+    publicAddBook(array('isbn' => $isbn), true);
+  }
   
   // 4. Create the `entries` table
   // This contains the entries of books by users
@@ -87,4 +99,7 @@
       PRIMARY KEY (`event_id`)
     )
   ');
+  
+  session_destroy();
+  session_unset();
 ?>
