@@ -46,8 +46,9 @@ header h1 {
   width: 280px;
   padding-left: 14px;
   background-color: #fcfcfc;
-  border-radius: 35px;
+  border-radius: 14px;
   border-bottom: 0;
+  border-left: 0;
   font-style: italic;
   transition: 140ms border-radius;
 }
@@ -66,10 +67,11 @@ header h1 {
   background-color: #fcfcfc;
   position: absolute;
   top: 61px;
-  width: 280px;
+  width: 420px;
+  border-top-right-radius: 35px;
 }
-#header_search_results.results + #header_search_form input[type=text] {
-  border-radius: 35px 35px 35px 0;
+#header_search_results.filled + #header_search_form input[type=text] {
+  border-radius: 14px 14px 0 0;
 }
 
 

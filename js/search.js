@@ -27,15 +27,39 @@ function searchGetResult() {
   var results = arguments[0],
       splitter = results.indexOf(" "),
       column = results.substr(0, splitter),
-      info = results.substr(splitter + 1),
-      parsed;
+      books_raw = results.substr(splitter + 1),
+      books;
   
   // Display the results as decoded by JSON
-  parsed = JSON.parse(info);
-  searchDisplayResults(column, parsed);
+  books = JSON.parse(books_raw);
+  searchDisplayResults(column, books);
 }
 
 // Displays search results under the appropriate section
-function searchDisplayResults(column, parsed) {
-  console.log("Almost there!", column, parsed);
+function searchDisplayResults(column, books) {
+  var output = "<h4>by " + column + ":</h4>",
+      col_id = "search_results_" + column,
+      holder, book, i;
+  
+  // Add each book's summary to the output
+  for(i in books) {
+    book = books[i];
+    output += "<div class='book'>";
+    output += "<strong>" + book.title + "</strong>";
+    output += "</div>";
+  }
+  
+  // Ensure div#search_results_{column} exists
+  holder = $("#" + col_id);
+  // (if it doesn't make, it)
+  if(holder.length == 0) {
+    var created = document.createElement("div");
+    created.id = col_id;
+    $("#header_search_results").append(created);
+    holder = $("#" + col_id);
+  }
+  
+  // Set the holder to contain this html, and update the parent class
+  holder.html(output);
+  $("#header_search_results").addClass("filled");
 }
