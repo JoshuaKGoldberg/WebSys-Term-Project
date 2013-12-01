@@ -1,22 +1,3 @@
-// Displays a little popup next to an input (in the div.complaint)
-// Sample usage: joinComplainOn("username", "That username is taken!", true)
-function joinComplainOn(holder, message, severe) {
-  joinComplainGet(holder).html(joinCreateComplaint(message, severe));
-}
-function joinComplainOff(holder) {
-  joinComplainGet(holder).html("");
-}
-function joinComplainGet(holder) {
-  return $("#hold_" + holder + " .hold_complaint");
-}
-
-function joinCreateComplaint(message, severe) {
-  var elem = document.createElement("div");
-  elem.className = "complaint " + (severe ? "severe" : "normal");
-  elem.innerHTML = message;
-  return elem;
-}
-
 // Called by hitting the submit button on the signup form
 // Tells the server to attempt to create a new user
 function joinSubmit() {
@@ -38,15 +19,33 @@ function joinSubmit() {
   // Visually update the button#submit
   $("#submit").val("thinking...").attr("disabled", false);
   
-  // Run the call to create the user
+  // Run the call to try to create the user
   sendRequest("publicCreateUser", {
     "username": username,
     "password": password,
     "email": email
   }, joinComplete);
-  
-  return;
 }
+
+// Displays a little popup next to an input (in the div.complaint)
+// Sample usage: joinComplainOn("username", "That username is taken!", true)
+function joinComplainOn(holder, message, severe) {
+  joinComplainGet(holder).html(joinCreateComplaint(message, severe));
+}
+function joinComplainOff(holder) {
+  joinComplainGet(holder).html("");
+}
+function joinComplainGet(holder) {
+  return $("#hold_" + holder + " .hold_complaint");
+}
+
+function joinCreateComplaint(message, severe) {
+  var elem = document.createElement("div");
+  elem.className = "complaint " + (severe ? "severe" : "normal");
+  elem.innerHTML = message;
+  return elem;
+}
+
 
 // Makes sure a given field isn't empty or too short
 function joinCheckValid(name, value, length) {
@@ -78,4 +77,23 @@ function joinComplete(text) {
     $("#pledge").html("<aside>" + text + "</aside>");
     $("#submit").html("Sign me up!");
   }
+}
+
+/* Logging in
+*/
+function loginSubmit(event) {
+  // Make sure the fields aren't empty
+  var username = $("#myusername").val(),
+      password = $("#mypassword").val();
+  if(!username || !password) return;
+  
+  // Run the call to try to log in
+  sendRequest("publicLogin", {
+    "username": username,
+    "password": password
+  }, loginComplete);
+}
+
+function loginComplete(text) {
+  alert(text);
 }

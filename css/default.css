@@ -83,57 +83,15 @@ section .half:nth-of-type(2) {
   float: right;
 }
 
-/* Main page's first section
+/* Input forms
 */
-#center .container {
-  margin-bottom: -28px;
-  width: 1050px;
-  background: url('/images/logo.jpg') left center no-repeat;
-}
-#center .text {
-  padding-left: 305px;
-}
-/* Sign up / log in button
-*/
-#button {
-  margin: auto;
-  margin-bottom: 70px;
-  width: 310px;
-  height: 49px;
-  padding-top: 3px;
-  background: #353549;
-  border-radius: 21px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-}
-#button_inside {
-  position: relative;
-}
-#button .half:nth-of-type(2) {
-  border-left: 1px solid white;
-}
-
-
-/* Signup section
-*/
-#signup .input_holder {
-  margin: -2px 0 17px 0;
-}
-#signup input {
+input {
   padding: 2px 3px 0 4px;
   border-radius: 7px;
   font-size: 21px;
   font-family: serif;
 }
-#signup aside {
-  display: inline;
-  font-style: italic;
-  font-size: 24px;
-}
-#signup input[type='submit'] {
-  /* margin-top: 14px; */
+input[type='submit'] {
   width: 100%;
   height: 70px;
   border-radius: 14px;
@@ -144,6 +102,59 @@ section .half:nth-of-type(2) {
   font-family: serif;
   cursor: pointer;
 }
+
+/* Main page's first section
+*/
+#center .container {
+  margin-bottom: -70px;
+  margin-top: -70px;
+  width: 1050px;  
+  background: url('/images/logo.jpg') left center no-repeat;
+}
+#center .text {
+  padding-left: 305px;
+}
+/* Sign up / log in button
+*/
+#login_form {
+  /* margin-top: 140px; */
+  /* position: absolute; */
+}
+#login_form_inside {
+  margin: auto;
+  padding-left: 189px;
+  padding-top: 21px;
+  width: 630px;
+  text-align: left;
+}
+#login_form_inside input {
+  font-size: 28px;
+}
+#login_form_inside input[type=submit] {
+  display: inline-block;
+  width: 175px;
+  height: 56px;
+  font-weight: bold;
+}
+#login_form_inside input#forgot[type=submit] {
+  margin: 7px 0 0 7px;
+  width: 280px;
+  font-weight: normal;
+  background-color: #494963;
+}
+
+/* Signup section
+*/
+#signup .input_holder {
+  margin: -2px 0 17px 0;
+}
+
+#signup aside {
+  display: inline;
+  font-style: italic;
+  font-size: 24px;
+}
+
 #pledge {
   margin-top: -7px;
 }

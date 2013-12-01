@@ -25,15 +25,14 @@
         </div>
       
         <!-- Sign up / Log in -->
-        <div id="button">
-          <div id="button_inside">
-            <div class="half" onclick="scrollToSection('signup')">join!</div>
-            <div class="half">log in</div>
-              <!--
-                <input type='text' value='username' name='username' />
-                <input type='text' value='password' name='password' />
-                <input type='submit' value='log in' />
-              -->
+        <div id="login_form">
+          <div id="login_form_inside">
+            <form onsubmit="loginSubmit(event); event.preventDefault();">
+              <input id="myusername" type='text' name='username' placeholder='username' />
+              <input id="mypassword" type='text' name='password' placeholder='password' />
+              <input type='submit' value='log me in!' />
+              <input style='opacity:.14' id="forgot" type='submit' value='forgot my password' />
+            </form>
           </div>
         </div>
       </div>
@@ -47,7 +46,7 @@
           <div class="text">
             <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. It's free to join, so you might as well...</p>
             <div class="half">
-              <form onsubmit="joinSubmit(); return false;">
+              <form onsubmit="joinSubmit(); event.preventDefault();">
                 <div id="hold_username" class='input_holder'>
                   <input id="username" type='text' name='username' placeholder='username' />
                   <aside>username</aside>
