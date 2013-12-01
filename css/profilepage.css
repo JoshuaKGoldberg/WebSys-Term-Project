@@ -1,7 +1,7 @@
 html, body { margin: 0; }
 body { background-color: #fefffc; }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Doppio One';
   text-shadow: 0 0 3px #fed;
 }
@@ -19,6 +19,11 @@ header h1 {
   text-align:center;
   display: table-cell;
   vertical-align: middle;
+  color: #CC5D25;
+}
+
+header a:link, a:visited{
+  text-decoration:none;
   color: #CC5D25;
 }
 
@@ -63,4 +68,47 @@ but it kept moving the title over so i sorta gave up*/
     padding-right:10px;
     padding-top:24px;
     z-index:2;
+}
+
+.booklist {
+    font-family: 'Doppio One';
+    padding:10px;
+    margin-top:15px;
+    width:400px;
+
+}
+
+#wishlist {
+  float:left;
+  background-color:#CC5D25;
+  color:#eee;
+  margin-left:25%;
+}
+
+#tradelist {
+  float:right;
+  background-color:#eee;
+  margin-right:25%;
+}
+
+footer {
+  clear:both;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 1.26em;
+  color: white;
+  border-top: 7px solid #ccc;
+  /* ColorZilla gradient */
+  background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
+}
+
+footer hr {
+  width: 350px;
+  border: 1px dashed #ccc;
 }

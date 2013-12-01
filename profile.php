@@ -9,19 +9,33 @@
 </head>
 <body>
     <div id="badge">
-        <img src="/images/profile-photo-placeholder.jpg" alt="" height="60" width="60">
+        <img src="profile-photo-placeholder.jpg" alt="" height="60" width="60">
         <p>Name</p>
         <p>Major/Year</p>
         <p>Email</p>
     </div>
     <header>
-        <h1>book exchange or something idk</h1>
+        <h1><a href="index.php">book exchange or something idk</a></h1>
     </header>
     <form class="pure-form" id="search">
         <input type="search" placeholder="Search">
         <button type="submit" class="pure-button">Search</button>
     </form>
 
+    <section id="wishlist" class="booklist">
+        <h3>Books you want:</h3>
+        <p>Nothing here yet!</p>
+    </section>
+    <section id="tradelist" class="booklist">
+        <h3>Books you're trading:</h3>
+        <p>Nothing here yet!</p>
+    </section>
 
+
+    <footer>
+      (WebSys term project)
+      <hr />
+      haters gonna hate
+    </footer>
 </body>
 </html>
