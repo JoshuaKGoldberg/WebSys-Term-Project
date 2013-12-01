@@ -15,6 +15,13 @@
   $dbPass = getDBPass();
   $dbName = getDBName();
   
+  // Names of functions that may be called by functions.php
+  $allowed_functions = array(
+    'publicLogin', 'publicCheckValidity'
+  );
+  foreach($allowed_functions as $name)
+    $allowed_functions[$name] = true;
+  
   /* Book particulars
   */
   
@@ -94,7 +101,7 @@
   */
   
   // checkKeyExists($dbConn, "table", "row", "value")
-  // Returns whether a key of the value exists under the row, in that table
+  // Returns a bool of whether a key of the value exists under the row, in that table
   function checkKeyExists($dbConn, $table, $row, $value) {
     $query = '
       SELECT `' . $row . '` FROM `' . $table . '`

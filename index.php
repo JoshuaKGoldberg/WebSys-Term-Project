@@ -1,12 +1,12 @@
 <?php
-  require_once('settings.php');
-  require_once('html_help.php');
+  require_once('php/settings.php');
+  require_once('php/html_help.php');
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <title>Book Exchange</title>
-    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
     </head>
   <body>
@@ -91,6 +91,7 @@
     </footer>
   </body>
   
-  <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
-  <script type="text/javascript" src="mainpage.js"></script>
+  <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="js/mainpage.js"></script>
+  <script type="text/javascript" src="js/requests.js"></script>
 </html>

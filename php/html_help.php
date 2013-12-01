@@ -2,6 +2,6 @@
   /* Functions for HTML pages
   */
   
-  require_once('settings.php');
+  require_once('/settings.php');
   
 ?>

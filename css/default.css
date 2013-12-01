@@ -88,7 +88,7 @@ section .half:nth-of-type(2) {
 #center .container {
   margin-bottom: -28px;
   width: 1050px;
-  background: url('logo.jpg') left center no-repeat;
+  background: url('/images/logo.jpg') left center no-repeat;
 }
 #center .text {
   padding-left: 305px;

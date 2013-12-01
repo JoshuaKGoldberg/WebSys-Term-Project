@@ -7,7 +7,7 @@
    * 3. Create the `books` table
    * 4. Create the `history` table
   */
-  require_once('settings.php');
+  require_once('php/settings.php');
   
   // Get a connection to the server (no specific database yet)
   $dbConn = getPDO($dbHost, '', $dbUser, $dbPass);
