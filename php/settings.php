@@ -26,7 +26,7 @@
   
   // Names of functions that may be called by functions.php
   $allowed_functions = array(
-    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook', 'publicSearch'
+    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook', 'publicSearch', 'publicGetBookEntries'
   );
   foreach($allowed_functions as $name)
     $allowed_functions[$name] = true;

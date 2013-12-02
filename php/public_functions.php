@@ -10,7 +10,7 @@
   // * "type"   - "username" or "email" 
   // * "value"  - the value to see if it's duplicate or not
   function publicCheckValidity($arguments, $noverbose=false) {
-    $dbConn = $_SESSION['dbConn'];
+    $dbConn = getPDOQuick();
     $field = $arguments['type'];
     $value = $arguments['value'];
     if(checkKeyExists($dbConn, 'users', $field, $value))
@@ -24,7 +24,7 @@
   // * "password"
   // * "email"
   function publicCreateUser($arguments, $noverbose=false) {
-    $dbConn = $_SESSION['dbConn'];
+    $dbConn = getPDOQuick();
     $username = $arguments['username'];
     $password = $arguments['password'];
     $email = $arguments['email'];
@@ -55,7 +55,7 @@
   // https://developers.google.com/books/docs/v1/using
   // https://www.googleapis.com/books/v1/volumes?q=isbn:9780073523323&key=AIzaSyD2FxaIBhdLTA7J6K5ktG4URdCFmQZOCUw
   function publicAddBook($arguments, $noverbose=false) {
-    $dbConn = $_SESSION['dbConn'];
+    $dbConn = getPDOQuick();
     $isbn = $arguments['isbn'];
     
     // Make sure the arguments aren't blank
@@ -108,7 +108,7 @@
   // * "value"
   // This needs protection against SQL injections
   function publicSearch($arguments, $noverbose=false) {
-    $dbConn = $_SESSION['dbConn'];
+    $dbConn = getPDOQuick();
     $column = $arguments['column'];
     $value = '%' . $arguments['value'] . '%';
     
@@ -122,9 +122,35 @@
     $stmnt = getPDOStatement($dbConn, $query);
     $durp = $stmnt->execute(array(':value' => $value));
     
-    
     // Return a JSON encoding of the results
     $result = $stmnt->fetchAll(PDO::FETCH_ASSOC);
     echo $column . " " . json_encode($result);
+  }
+
+  // publicGetBookEntries({...})
+  // Gets all entries for an isbn of the given action
+  // Required fields:
+  // * #isbn
+  // * "action"
+  function publicGetBookEntries($arguments, $noverbose=false) {
+    $dbConn = getPDOQuick();
+    $isbn = $arguments['isbn'];
+    $action = $arguments['action'];
+    
+    // Prepare the initial query
+    $query = '
+      SELECT * FROM `entries`
+      WHERE `isbn` LIKE :isbn
+      AND `action` LIKE :action
+    ';
+    
+    // Run the query
+    $stmnt = getPDOStatement($dbConn, $query);
+    $durp = $stmnt->execute(array(':isbn' => $isbn,
+                                  ':action' => $action));
+    
+    // Return a JSON encoding of the results
+    $result = $stmnt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($result);
   }
 ?>

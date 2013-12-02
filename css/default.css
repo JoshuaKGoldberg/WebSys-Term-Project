@@ -204,6 +204,13 @@ footer hr {
   border: 1px dashed #ccc;
 }
 
+/* Standardized things (general)
+*/
+a.normal {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Standardized widths
 */
 .width_standard {

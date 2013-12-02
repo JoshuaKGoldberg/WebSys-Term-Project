@@ -17,6 +17,7 @@ function html_print_footer() {
       <script type="text/javascript" src="js/mainpage.js"></script>
       <script type="text/javascript" src="js/requests.js"></script>
       <script type="text/javascript" src="js/search.js"></script>
+      <script type="text/javascript" src="js/books.js"></script>
     </html>
   ';
 }

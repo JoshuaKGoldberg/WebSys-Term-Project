@@ -35,9 +35,11 @@
   // printBookEntriesPlaceholder("type")
   // Prints out all the wrapper div, to be filled out by books.js::printBookEntries()
   function printBookEntriesPlaceholder($type, $info) {
-    echo '<div class="display_entries_in display_entries_' . $type . '">' . PHP_EOL;
-    echo '<h3>Offers to ' . $type . '...</h3>' . PHP_EOL;
-    echo '<aside>loading...</aside>' . PHP_EOL;
+    echo '<div class="display_entries_in" id="display_entries_' . $type . '">' . PHP_EOL;
+    echo '  <h3>Offers to ' . $type . '...</h3>' . PHP_EOL;
+    echo '  <div class="display_entries_list">' . PHP_EOL;
+    echo '    <aside>loading...</aside>' . PHP_EOL;
+    echo '  </div>' . PHP_EOL;
     echo '</div>' . PHP_EOL;
   }
 ?>

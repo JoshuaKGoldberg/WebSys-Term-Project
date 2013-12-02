@@ -32,4 +32,8 @@
   echo '<aside class="display_entries_after">Wrong information here? <a href="mailto:' . getSiteEmail() . '">Let us know!</a></aside>' . PHP_EOL;
   
   html_print_footer();
+  
+  // Make the page auto-load via js
+  echo '<script type = "text/javascript"> startLoadingBookEntries("' . $isbn . '"); </script>';
+
 ?>

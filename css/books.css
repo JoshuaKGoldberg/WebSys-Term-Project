@@ -65,3 +65,19 @@
   text-align: center;
   padding: 35px 0 7px 0;
 }
+.display_entries_list li {
+  margin-bottom: 14px;
+}
+.entry_listing_link {
+  clear: both;
+  float: right;
+  margin-top: -7px;
+  padding: 3px 7px 3px 4px;
+  background: #fafafa;
+  border: 1px solid #aaa;
+  border-radius: 14px 7px;
+  /* color: white; */
+  text-shadow: 0 0 3px 3px white;
+  font-style: italic;
+  cursor: pointer;
+}
