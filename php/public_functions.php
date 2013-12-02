@@ -32,8 +32,12 @@
     // Make sure the arguments aren't blank
     if(!$username || !$password || !$email) return;
     
-    if(dbUsersAdd($dbConn, $username, $password, $email, 0) && !$noverbose)
-      echo 'Yes';
+    // If successful, log in
+    if(dbUsersAdd($dbConn, $username, $password, $email, 0)) {
+      publicLogin($arguments, true);
+      if(!$noverbose)
+        echo 'Yes';
+    }
   }
   
   // publicLogin({...})
