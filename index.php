@@ -1,6 +1,6 @@
 <?php 
   require_once('php/html_helpers.php');
-  page_start(["mainpage"]);
+  page_start(new array("mainpage"));
 ?>
     
     <!-- Section 1 (main slogan) -->
@@ -69,4 +69,4 @@
         </div>
     </section>
     
-<?php page_end(); ?>
+<?php page_end(new array("mainpage")); ?>
