@@ -86,8 +86,8 @@ but it kept moving the title over so i sorta gave up*/
 
 #wishlist {
   float:left;
-  background-color:#CC5D25;
-  color:#eee;
+  background-color:#eee;
+  color:#CC5D25;
 }
 
 #tradelist {
@@ -100,7 +100,7 @@ but it kept moving the title over so i sorta gave up*/
   margin-left:10px;
   margin-right:10px;
   padding:10px;
-  background-color:#003162;
+  background-color:#485664;
 }
 
 #listitem p {
