@@ -1,6 +1,10 @@
 html, body { margin: 0; }
 html, footer { background-color: #565656; }
-body { background-color: #fdfdfd; }
+body { 
+  background-color: #fdfdfd; 
+  font-family: 'Lato';
+  
+}
 
 
 h1, h2, h3 {

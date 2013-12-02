@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/default.css">
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <!-- Header -->
@@ -23,7 +24,7 @@
       <div class="aligner">
         <div class="container">
           <div class="text">
-            <h1>Find textbooks to sell and trade, on your campus.</h1>
+            <h1>Find textbooks to sell and trade on your campus.</h1>
           </div>
         </div>
         <!-- Log in -->
@@ -78,7 +79,7 @@
       <div class="aligner">
         <div class="container">
           <div class="text">
-            <p>More information on what the site does, explanation of the term project, etc? maybe</p>
+            <p>A central hub for college students to trade, sell, and buy textbooks on their local campus. Create a profile and join the textbook marketplace for college students!</p>
           </div>
         </div>
     </section>
