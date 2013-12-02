@@ -31,7 +31,8 @@
     else return $string;
   }
   
-  function html_print_header($css=[]) {
+  function html_print_header($css=false) {
+    if(!$css) $css = array();
     if(!isset($_SESSION)) session_start();
     
     // Begin the header with the doctype

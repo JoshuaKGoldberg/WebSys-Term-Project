@@ -1,7 +1,7 @@
 <?php
   require_once('php/html_helpers.php');
   require_once('php/html_book.php.inc');
-  page_start(["books"]);
+  page_start(array("books"));
   
   if(!isset($_GET['isbn']))
     header('Location: "/index.php"');
@@ -24,7 +24,7 @@
   // There may be wrong information, provide a form for that
   echo '<aside class="display_entries_after">Wrong information here? <a href="mailto:' . getSiteEmail() . '">Let us know!</a></aside>' . PHP_EOL;
   
-  page_end(["books"]);
+  page_end(array("books"));
   
   // Make the page auto-load via js
   echo '<script type = "text/javascript"> startLoadingBookEntries("' . $isbn . '"); </script>';

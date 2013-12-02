@@ -2,7 +2,8 @@
 
 require_once('settings.php');
 
-function html_print_footer($js=[]) {
+function html_print_footer($js=false) {
+  if(!$js) $js = array();
   // Begin the footer
   echo '    <!-- Footer -->' . PHP_EOL;
   echo '    <footer>' . PHP_EOL;
