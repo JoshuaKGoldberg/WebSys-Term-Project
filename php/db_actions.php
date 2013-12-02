@@ -196,7 +196,7 @@
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute($args);
     
-    return $stmnt->fetch(PDO::FETCH_ASSOC);
+    return $stmnt->fetchAll();
   }
   
   // dbEntriesAdd(#isbn, #user_id, #price, "state")

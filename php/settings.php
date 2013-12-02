@@ -4,7 +4,8 @@
   */
   
   // General site info
-  function getSiteName() { return "book exchange or something idk"; }
+  function getSiteName() { return "RPI Textbook Exchange"; }
+  function getNumBooks() { return "over 20"; }
   
   // Database info lookups
   function getDBHost() { return "localhost"; }
@@ -32,7 +33,7 @@
   /* Book particulars
   */
   
-  $bookStates  = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
+  $bookStates      = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
   $bookCondDefault = 'Good';
   $bookActions     = array('Buy', 'Sell', 'Trade', 'Wish');
   $historyRatings  = array('0', '1', '2', '3', '4', '5');
