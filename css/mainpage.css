@@ -48,13 +48,14 @@ section p, section .justified {
 /* 50% width sections
 */
 section .half {
-  width: 49%;
+  width: 30%;
   /* padding-left: 7px; */
   /* position: absolute; */
   float: left;
 }
 section .half:nth-of-type(2) {
   /* right: 0; */
+  width: 60%;
   padding-left: 0;
   float: right;
 }
