@@ -5,11 +5,11 @@
     <title>Profile</title>
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" type="text/css" href="css/profilepage.css">
+    <link rel="stylesheet" type="text/css" href="/css/profilepage.css">
 </head>
 <body>
     <div id="badge">
-        <img src="images/profile-photo-placeholder.jpg" alt="" height="60" width="60">
+        <img src="/images/profile-photo-placeholder.jpg" alt="" height="60" width="60">
         <p>Name</p>
         <p>Major/Year</p>
         <p>Email</p>
@@ -27,7 +27,7 @@
                 <div id="listitem">
                     <!-- i will write up a PHP snippet that will iterate through the database and
                          make an entry for each book in the list -->
-                    <img src="images/book-cover-placeholder.png" height="86" width="86">
+                    <img src="/images/book-cover-placeholder.png" height="86" width="86">
                     <p>Title</p>
                     <p>ISBN</p>
                 </div>
@@ -37,7 +37,7 @@
                 <div id="listitem">
                     <!-- i will write up a PHP snippet that will iterate through the database and
                          make an entry for each book in the list -->
-                    <img src="images/book-cover-placeholder.png" height="86" width="86">
+                    <img src="/images/book-cover-placeholder.png" height="86" width="86">
                     <p>Title</p>
                     <p>ISBN</p>
                 </div>

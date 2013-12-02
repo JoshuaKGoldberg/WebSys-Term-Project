@@ -132,6 +132,16 @@
     if(is_array($authors))
       $authors = implode($authors, '\n');
     
+    // Make sure $year only contains the 4-digit year string
+    if(strlen($year) > 4) {
+      $year = explode("-", $year);
+      foreach($year as $sub)
+        if(strlen($sub) == 4) {
+            $year = $sub;
+            break;
+        }
+    }
+    
     // Run the insertion query
     $query = '
       INSERT INTO  `books` (

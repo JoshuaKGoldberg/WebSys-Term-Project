@@ -46,7 +46,7 @@
       <div class="aligner">
         <div class="container">
           <div class="text">
-            <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. It's free to join, so you might as well...</p>
+            <p>By signing up for 'book exchange or something idk' you're giving yourself access to 'some number' of free, for-trade, and for-discount books made available by students just like you. Best of all, it's free!</p>
             <div class="half">
               <form onsubmit="event.preventDefault(); joinSubmit();">
                 <div id="hold_username" class='input_holder'>
@@ -68,7 +68,7 @@
               </form>
             </div>
             <div id="pledge" class="half justified">
-              <aside>We pledge to <b>never use or distribute your personal information</b> outside of this website. This means other members will be able to see your name and send you private messages on this site - that is all. Whatever else you do is on you, buddy.</aside>
+              <aside>We pledge to <b>never use or distribute your personal information</b> outside of this website. This means other members will be able to see your name and send you emails - that is all. Whatever else you do is on you, buddy.</aside>
             </div>
           </div>
         </div>

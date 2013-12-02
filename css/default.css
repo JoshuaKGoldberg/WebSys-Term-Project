@@ -72,10 +72,42 @@ header h1 {
   position: absolute;
   top: 61px;
   width: 420px;
-  border-top-right-radius: 35px;
+  margin-left: 1px;
+  border-radius: 0 35px 14px 14px;
+  z-index: 70;
+}
+#header_search_results.filled {
+  box-shadow: 0 21px 35px white;
+  padding-left: 7px;
 }
 #header_search_results.filled + #header_search_form input[type=text] {
   border-radius: 14px 21px 0 0;
+}
+#header_search_results aside {
+  font-style: italic;
+  color: #777;
+}
+.search_complaint #header_search_nothing {
+  padding: 7px;
+  font-size: 21px;
+  font-style: italic;
+}
+/* Book results
+*/
+#header_search_results .book {
+  font-size: 21px;
+  padding: 3px 0 7px 0;
+}
+#header_search_results .book a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+#header_search_results .book .year {
+  margin-right: 7px;
+  padding: 3px;
+  float: right;
+  font-size: 17px;
 }
 
 

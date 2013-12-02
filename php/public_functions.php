@@ -114,6 +114,7 @@
     $query = '
       SELECT * FROM `books`
       WHERE `' . $column . '` LIKE :value
+      LIMIT 1, 7
     ';
     
     // Run the query
