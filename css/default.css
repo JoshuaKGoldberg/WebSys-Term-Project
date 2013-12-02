@@ -40,7 +40,7 @@ header h1 {
 #header_search {
   position: relative;
   display: table;
-  margin-right: -84px;
+  margin-right: -70px;
   height: 84px;
 }
 #header_search_form {

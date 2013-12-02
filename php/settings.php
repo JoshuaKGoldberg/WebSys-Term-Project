@@ -5,7 +5,7 @@
   
   // General site info
   function getSiteName() { return "RPI Textbook Exchange"; }
-  function getNumBooks() { return "over 20"; }
+  function getNumBooks() { return "dozens"; }
   
   // Database info lookups
   function getDBHost() { return "localhost"; }
