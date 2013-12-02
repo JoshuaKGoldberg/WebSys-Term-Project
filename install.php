@@ -74,7 +74,7 @@
       `entry_id` INT(10) NOT NULL AUTO_INCREMENT,
       `isbn` VARCHAR(15) NOT NULL,
       `user_id` INT(10) NOT NULL,
-      `name` VARCHAR(127) NOT NULL,
+      `username` VARCHAR(127) NOT NULL,
       `price` DECIMAL(19,4),
       `state` ENUM(' . makeSQLEnum($bookStates) . '),
       `action` ENUM(' . makeSQLEnum($bookActions) . '),

@@ -52,8 +52,8 @@ function getBookCondValue(a) {
 function getBookEntryListing(entry) {
   var output = "<li>";
   console.log(entry);
-  output += "<div class='entry_listing_link'><a class='normal' href='/users.php?user=" + entry.user_id + "&entry=" + entry.entry_id + "'>Go to seller</a></div>";
-  output += "'<strong>" + entry.name + "</strong>' for <strong>$" + Number(entry.price).toFixed(2) + "</strong> <em>(" + entry.state + ")</em>";
+  output += "<a class='normal' href='/users.php?user=" + entry.user_id + "&entry=" + entry.entry_id + "'>" + entry.username + "</a>";
+  output += "for <strong>$" + Number(entry.price).toFixed(2) + "</strong> <em>(" + entry.state + ")</em>";
   output += "</li>";
   return output;
 }
