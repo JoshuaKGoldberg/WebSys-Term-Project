@@ -1,17 +1,10 @@
 <?php
-  require_once('php/settings.php');
-  require_once('php/db_actions.php');
-  require_once('php/html_header.php.inc');
-  require_once('php/html_footer.php.inc');
+  require_once('php/html_helpers.php');
   require_once('php/html_book.php.inc');
-  
-?>
-
-<?php
-  html_print_header("book");
+  page_start(["books"]);
   
   if(!isset($_GET['isbn']))
-    header('Location: "/"');
+    header('Location: "/index.php"');
   $isbn = $_GET['isbn'];
   
   // Grab info on the book itself
@@ -31,9 +24,9 @@
   // There may be wrong information, provide a form for that
   echo '<aside class="display_entries_after">Wrong information here? <a href="mailto:' . getSiteEmail() . '">Let us know!</a></aside>' . PHP_EOL;
   
-  html_print_footer();
+  page_end(["books"]);
   
   // Make the page auto-load via js
   echo '<script type = "text/javascript"> startLoadingBookEntries("' . $isbn . '"); </script>';
-
+  
 ?>

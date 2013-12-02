@@ -1,30 +1,44 @@
 <?php
-  /* Functions for HTML pages
-  */
-  
   require_once('settings.php');
+  require_once('db_actions.php');
+  require_once('html_header.php.inc');
+  require_once('html_footer.php.inc');
   
+  // page_start(["css"])
+  // Start a page, including the correct PHP and CSS files and printing the header
+  function page_start($css=[]) {
+    // Ensure the session exists
+    if(!isset($_SESSION))
+      session_start();
+    
+    // Add the default CSS
+    $css[] = "default";
+    
+    // Print the header, using the required CSS files
+    html_print_header($css);
+  }
   
-  // Prints the general header
-  function html_print_header() {
-  echo '
-    <header>
-      <div id="header_main">
-        <h1>book exchange or something idk
-        </h1>
-        <div id="header_search">
-          <div id="header_search_results">
-            <div id="search_results_title"></div>
-            <div id="search_results_description"></div>
-            <div id="search_results_authors"></div>
-          </div>
-          <form id="header_search_form" onkeydown="searchStart();" onsubmit="event.preventDefault(); searchStartFull();">
-            <input id="header_search_input" type="text" placeholder="search" />
-          </form>
-          <div id="header_search_submit" onclick="searchStartFull();"></div>
-        </div>
-      </div>
-    </header>
-  ';
+  // page_end(["js"])
+  // Ends a page, including the correct JS files
+  function page_end($js=[]) {
+    // Add the default JS
+    $js[] = "jquery-2.0.3.min";
+    $js[] = "requests";
+    $js[] = "search";
+    html_print_footer($js);
+  }
+
+  // ensure_logged_in()
+  // Redirects anonymous users to index.php
+  function ensure_logged_in() {
+    if(!isset($_SESSION['Logged In']) || !$_SESSION['Logged In'])
+      header('Location: /index.php');
+  }
+  
+  // ensure_logged_out()
+  // Redirects logged in users to account.php
+  function ensure_logged_out() {
+    if(isset($_SESSION['Logged In']) && $_SESSION['Logged In'])
+      header('Location: /account.php');
   }
 ?>

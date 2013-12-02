@@ -1,13 +1,7 @@
-<?php
-  require_once('php/settings.php');
-  require_once('php/html_header.php.inc');
-  require_once('php/html_footer.php.inc');
-  session_start();
-  // If the user is already logged in, don't bother with this page    
-  if(isset($_SESSION['Logged In']) && $_SESSION['Logged In'])
-    header('Location: ./account.php');
+<?php 
+  require_once('php/html_helpers.php');
+  page_start(["mainpage"]);
 ?>
-<?php html_print_header("main"); ?>
     
     <!-- Section 1 (main slogan) -->
     <section id="center">
@@ -75,5 +69,4 @@
         </div>
     </section>
     
-<!-- Footer -->
-<?php html_print_footer(); ?>
+<?php page_end(); ?>

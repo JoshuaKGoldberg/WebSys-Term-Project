@@ -31,7 +31,7 @@
     
     // Make sure the arguments aren't blank
     if(!$username || !$password || !$email) return;
-    
+
     // If successful, log in
     if(dbUsersAdd($dbConn, $username, $password, $email, 0)) {
       publicLogin($arguments, true);
