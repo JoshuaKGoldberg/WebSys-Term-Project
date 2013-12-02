@@ -79,7 +79,7 @@ header h1 {
   z-index: 70;
 }
 #header_search_results.filled {
-  box-shadow: 0 21px 35px white;
+  box-shadow: 0 0 21px rgba(252,252,252,.7);
   padding-left: 7px;
 }
 #header_search_results.filled + #header_search_form input[type=text] {

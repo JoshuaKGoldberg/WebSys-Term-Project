@@ -98,7 +98,7 @@
   // Sample usage: dbBooksGet($dbConn, $isbn);
   function dbBooksGet($dbConn, $isbn) {
     // Ensure the isbn exists in the database
-    if(!checkKeyExists($dbConn, 'books', 'isbn', $user_id)) {
+    if(!checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
       echo 'No such isbn exists: ' . $isbn;
       return false;
     }

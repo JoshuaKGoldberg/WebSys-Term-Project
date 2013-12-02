@@ -1,0 +1,53 @@
+/* Large (full) displays
+*/
+.display_book_large {
+  margin: auto;
+  width: 819px;
+}
+.display_book_large img {
+  float: left;
+  margin: 14px 14px 0 0;
+}
+.display_book_info {
+  overflow: hidden;
+}
+.display_book_large h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 56px;
+  font-weight: normal;
+}
+.display_book_large h1 aside {
+  display: inline;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: normal;
+  color: #777;
+}
+.display_book_description {
+  clear: both;
+  text-align: justify;
+  font-size: 21px;
+}
+.display_book_published {
+  margin: 21px 0;
+  height: 1px;
+  background-color: #aaa;
+  line-height: 0;
+  text-align: center;
+}
+.display_book_published p {
+  display: inline;
+  padding: 0 7px 0 3px;
+  height: 3px;
+  background-color: #fcfcfc;
+  font-style: italic;
+}
+.display_book_published em {
+  color: #777;
+  font-size: 14px;
+}
+
+.display_book blockquote {
+  margin: 0;
+}

@@ -19,6 +19,9 @@
       case 'main':
         echo $spaces . '<link rel="stylesheet" type="text/css" href="css/mainpage.css">' . PHP_EOL;
       return;
+      case 'book':
+        echo $spaces . '<link rel="stylesheet" type="text/css" href="css/books.css">' . PHP_EOL;
+      return;
       // The account also uses the Pure CSS library
       case 'account':
         echo $spaces . '<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">' . PHP_EOL;
