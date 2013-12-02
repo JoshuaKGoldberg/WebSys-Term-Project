@@ -26,6 +26,9 @@ section .text {
   margin-bottom: 14px;
   font-size: 28px;
 }
+section .text.spaced {
+  line-height: 175%;
+}
 section:nth-of-type(2n) {
   background: #565656;
   color: #eee;

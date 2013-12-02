@@ -78,7 +78,7 @@
     <section id="more">
       <div class="aligner">
         <div class="container">
-          <div class="text">
+          <div class="text spaced">
             <p>A central hub for college students to trade, sell, and buy textbooks on their local campus. Create a profile and join the textbook marketplace for college students!</p>
           </div>
         </div>

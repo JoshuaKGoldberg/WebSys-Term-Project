@@ -42,11 +42,12 @@
   // 3. Create the `books` table
   // This refers to the known information on a book
   // * These are identified by their 13-digit ISBN number
+  // * Google Book IDs are also kept for book.php
   // * The authors list is split by endline characters
-  // description`, `publisher`, `year
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `books` (
       `isbn` VARCHAR(15) NOT NULL,
+      `google_id` VARCHAR(127),
       `title` VARCHAR(127),
       `authors` VARCHAR(255),
       `description` VARCHAR(1023),

@@ -53,6 +53,7 @@
   // Required fields:
   // * "isbn"
   // https://developers.google.com/books/docs/v1/using
+  // https://www.googleapis.com/books/v1/volumes?q=isbn:9780073523323&key=AIzaSyD2FxaIBhdLTA7J6K5ktG4URdCFmQZOCUw
   function publicAddBook($arguments, $noverbose=false) {
     $dbConn = $_SESSION['dbConn'];
     $isbn = $arguments['isbn'];
@@ -90,12 +91,13 @@
     $publisher = isset($info->publisher) ? $info->publisher : "";
     $year = isset($info->publishedDate) ? $info->publishedDate : "";
     $pages = isset($info->pageCount) ? $info->pageCount : "";
+    $googleID = isset($book->id) ? $book->id : "";
     
     // Title and authors can't be blank, but other fields can be
     if(!$title || !$authors)
       return;
     
-    if(dbBooksAdd($dbConn, $isbn, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose)
+    if(dbBooksAdd($dbConn, $isbn, $googleID, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose)
       echo 'Yes';
   }
 
@@ -114,7 +116,6 @@
     $query = '
       SELECT * FROM `books`
       WHERE `' . $column . '` LIKE :value
-      LIMIT 1, 7
     ';
     
     // Run the query

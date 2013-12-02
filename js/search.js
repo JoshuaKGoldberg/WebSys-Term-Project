@@ -47,6 +47,7 @@ function searchGetResult(results, count) {
   
   // Display the results as decoded by JSON
   books = JSON.parse(books_raw);
+  books.splice(7, Infinity); // (but only the first 7)
   searchDisplayResults(column, books);
 }
 
@@ -97,4 +98,9 @@ function searchDisplayResults(column, books) {
   // Set the holder to contain this html, and update the parent class
   holder.html(output);
   $("#header_search_results").addClass("filled");
+}
+
+// Redirects the search to the full page
+function searchStartFull() {
+  window.location = "search.php?value=" + $("#header_search_input").val().trim();
 }

@@ -117,11 +117,11 @@
     return $stmnt->fetch(PDO::FETCH_ASSOC);
   }
   
-  // dbBooksAdd(#isbn, "title", "authors", "description", "publisher", "year", "pages")
+  // dbBooksAdd(#isbn, #googleID, "title", "authors", "description", "publisher", "year", "pages")
   // Adds a book to `books`
   // Authors may be given as an array or string (separated by endlines)
-  // Sample usage: dbBooksAdd($dbConn, $isbn, $title, $authors, $genre);
-  function dbBooksAdd($dbConn, $isbn, $title, $authors, $description, $publisher, $year, $pages) {
+  // Sample usage: dbBooksAdd($dbConn, $googleID, $isbn, $title, $authors, $genre);
+  function dbBooksAdd($dbConn, $isbn, $googleID, $title, $authors, $description, $publisher, $year, $pages) {
     // Ensure the isbn doesn't already exist
     if(checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
       echo 'The ISBN already exists: ' . $isbn;
@@ -145,14 +145,15 @@
     // Run the insertion query
     $query = '
       INSERT INTO  `books` (
-        `isbn`, `title`, `authors`, `description`, `publisher`, `year`, `pages`
+        `isbn`, `google_id`, `title`, `authors`, `description`, `publisher`, `year`, `pages`
       )
       VALUES (
-        :isbn,  :title, :authors, :description, :publisher, :year, :pages
+        :isbn, :google_id,  :title, :authors, :description, :publisher, :year, :pages
       )
     ';
     $stmnt = getPDOStatement($dbConn, $query);
     $stmnt->execute(array(':isbn'        => $isbn,
+                          ':google_id'   => $googleID,
                           ':title'       => $title,
                           ':authors'     => $authors,
                           ':description' => $description,
