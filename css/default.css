@@ -12,7 +12,7 @@ h1, h2, h3 {
   text-shadow: 0 0 3px #eee;
 }
 
-/* Header
+/* Header (general)
 */
 header {
   background-color: #eee;
@@ -34,6 +34,7 @@ header h1 {
   color: #CC5D25;
   text-align: left;
 }
+
 /* Search (general)
 */
 #header_search {
@@ -111,17 +112,60 @@ header h1 {
   font-size: 17px;
 }
 
+/* Badge
+*/
+#badge {
+  position: absolute;
+  top: 0;
+  width: 268px;
+}
+#badge img {
+  width: 84px;
+  height: 84px;
+}
+#badge_back + h1 {
+  text-align: center;
+  width: 455px;
+}
+#badge_main {
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+#badge_user_info {
+  height: 42px;
+  line-height: 133%;
+}
+#badge_username {
+  margin-top: 3px;
+  font-size: 17px;
+  font-weight: bold;
+}
+#badge_back {
+  margin-right: 210px;
+}
+#badge input[type=submit] {
+  margin-top: 3px;
+  width: 182px;
+  height: 35px;
+  background-color: #ccc;
+  border: solid #aaa;
+  border-width: 2px 1px 1px 1px;
+  border-radius: 0;
+  font-size: 14px;
+  font-style: normal;
+}
 
 /* Input forms
 */
 input {
   padding: 2px 3px 0 4px;
   border-radius: 7px;
+  outline: 0;
   font-size: 21px;
   font-family: serif;
-  outline: 0;
 }
-input[type='submit'] {
+input[type=submit] {
   width: 100%;
   height: 70px;
   border-radius: 14px;

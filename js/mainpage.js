@@ -67,11 +67,11 @@ function joinComplete(text) {
   if(text == 'Yes') {
     var message = "Your user account has successfully been created! ";
     message += "You should be redirected to ";
-    message += "<a href='/profile.php'>your profile page</a>";
+    message += "<a href='/account.php'>your profile page</a>";
     message += " shortly; if not, click that link.";
     $("#pledge").html("<aside>" + message + "</aside>");
     $("#submit").remove();
-    window.location='profile.php';
+    window.location = '/account.php';
   }
   // Otherwise text contains the error
   else {
@@ -100,10 +100,10 @@ function loginComplete(text) {
   if(text == 'Yes') {
     var message = "You've successfully logged in! ";
     message += "You should be redirected to ";
-    message += "<a href='/profile.php'>your profile page</a>";
+    message += "<a href='/account.php'>your profile page</a>";
     message += " shortly; if not, click that link.";
     $("#login_form_inside").html("<aside>" + message + "</aside>");
-    window.location='profile.php';
+    window.location = '/account.php';
   }
   // Otherwise the information was incorrect
   else {

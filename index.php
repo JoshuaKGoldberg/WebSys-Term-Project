@@ -5,10 +5,9 @@
   session_start();
   // If the user is already logged in, don't bother with this page    
   if(isset($_SESSION['Logged In']) && $_SESSION['Logged In'])
-    header('Location: ./account');
+    header('Location: ./account.php');
 ?>
-<!-- Header -->
-<?php html_print_header("MAIN"); ?>
+<?php html_print_header("main"); ?>
     
     <!-- Section 1 (main slogan) -->
     <section id="center">
