@@ -4,13 +4,22 @@ function joinSubmit() {
   // Make sure the fields aren't empty
   var username = $("#username").val(),
       password = $("#password").val(),
+	  password_confirm = $("#password_confirm").val(),
       email = $("#email").val(),
       ok = 0;
+  
   ok += joinCheckValid("username", username, 4);
   ok += joinCheckValid("password", password);
+  ok += joinCheckValid("password_confirm", password_confirm);
   ok += joinCheckValid("email", email);
-  if(ok != 3) return;
-  
+  if(ok != 4) return;
+ 
+  // Ensure that the user is creating an account with identical password fields
+  if (password != password_confirm) {
+	joinComplainOn("password", "Passwords do not match");
+	return;
+  }	 
+ 
   // Stop the user from accidentally spamming requests
   var joinSubmitOld = window.joinSubmit;
   window.joinSubmit = false;
@@ -18,7 +27,7 @@ function joinSubmit() {
   
   // Visually update the button#submit
   $("#submit").val("thinking...").attr("disabled", false);
-  
+   
   // Run the call to try to create the user
   sendRequest("publicCreateUser", {
     "username": username,

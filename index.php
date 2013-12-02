@@ -40,18 +40,19 @@
             <div class="half">
               <form onsubmit="event.preventDefault(); joinSubmit();">
                 <div id="hold_username" class='input_holder'>
-                  <input id="username" type='text' name='username' placeholder='username' />
-                  <aside>username</aside>
+                  <input id="username" type='text' name='username' placeholder='Username' />
                   <div class="hold_complaint"></div>
                 </div>
                 <div id="hold_password" class='input_holder'>
-                  <input id="password" type='password' name='password' placeholder='password' />
-                  <aside>password</aside>
+                  <input id="password" type='password' name='password' placeholder='Password' />
                   <div class="hold_complaint"></div>
                 </div>
+				<div id="hold_password_confirm" class = 'input_holder'>
+					<input id="password_confirm" type='password' name='password_confirm' placeholder='Re-enter password' />
+					<div class="hold_complaint"></div>
+				</div>
                 <div id="hold_email" class='input_holder'>
-                  <input id="email" type='email' name='email' placeholder='email@address' />
-                  <aside>email</aside>
+                  <input id="email" type='email' name='email' placeholder='Email' />
                   <div class="hold_complaint"></div>
                 </div>
                 <input id="submit" type='submit' value='Sign Me Up!'/>
