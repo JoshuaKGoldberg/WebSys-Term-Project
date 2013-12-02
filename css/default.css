@@ -27,6 +27,7 @@ header {
 header h1 {
   margin: 0;
   padding-bottom: 7px;
+  width: 700px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;

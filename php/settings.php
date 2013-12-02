@@ -33,8 +33,8 @@
   /* Book particulars
   */
   
-  $bookStates      = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
   $bookCondDefault = 'Good';
+  $bookStates      = array('Terrible', 'Poor', 'Fair', 'Good', 'Very Good', 'Like New');
   $bookActions     = array('Buy', 'Sell', 'Trade', 'Wish');
   $historyRatings  = array('0', '1', '2', '3', '4', '5');
   

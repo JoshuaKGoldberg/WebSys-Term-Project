@@ -52,10 +52,10 @@ function html_print_header($page,$username="") {
                 <div id='search_results_description'></div>
                 <div id='search_results_authors'></div>
               </div>
-              <form id='header_search_form' onsubmit='event.preventDefault(); searchStart();'>
+              <form id='header_search_form' onkeydown='searchStart();' onsubmit='event.preventDefault(); searchStartFull();'>
                 <input id='header_search_input' type='text' placeholder='search' />
               </form>
-              <div id='header_search_submit' onclick='searchStart();'></div>
+              <div id='header_search_submit' onclick='searchStartFull();'></div>
             </div>
           </div>
         </header>
