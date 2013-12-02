@@ -6,6 +6,7 @@
   // General site info
   function getSiteName() { return "RPI Textbook Exchange"; }
   function getNumBooks() { return "dozens"; }
+  function getSiteEmail() { return "nope@nope.com"; }
   
   // Database info lookups
   function getDBHost() { return "localhost"; }
@@ -67,12 +68,22 @@
     return $dbConn;
   }
   
-  // getPDOQuick)
+  // getPDOQuick()
   // Gets a new PDO object with the default settings
   // Sample usage: $dbConn = getPDOQuick();
   function getPDOQuick() {
     return getPDO(getDBHost(), getDBName(), getDBUser(), getDBPass());
   } 
+  
+  // getSessionPDO()
+  // Returns $_SESSION['dbConn'] (after creating it if it doesn't exist)
+  function getSessionPDO() {
+    // First grab the info about the book
+    if(!isset($_SESSION)) session_start();
+    if(!isset($_SESSION['dbConn']))
+      $_SESSION['dbConn'] = getPDOQuick();
+    return $_SESSION['dbConn'];
+  }
   
   // getPDOStatement($dbConn, $query)
   // Runs the typical preparation function on the PDO object for a statement

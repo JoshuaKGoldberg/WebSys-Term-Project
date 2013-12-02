@@ -18,6 +18,11 @@ header {
   background-color: #eee;
   border-bottom: 7px solid white;
 }
+header a {
+  text-decoration: inherit;
+  font-style: inherit;
+  color: #CC5D25;
+}
 #header_main {
   display: table;
   margin: auto;
@@ -31,7 +36,6 @@ header h1 {
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  color: #CC5D25;
   text-align: left;
 }
 
@@ -195,8 +199,13 @@ footer {
   background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
 }
-
 footer hr {
   width: 350px;
   border: 1px dashed #ccc;
+}
+
+/* Standardized widths
+*/
+.width_standard {
+  width: 819px;
 }

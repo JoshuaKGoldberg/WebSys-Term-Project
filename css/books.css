@@ -30,7 +30,7 @@
   font-size: 21px;
 }
 .display_book_published {
-  margin: 21px 0;
+  margin: 28px 0 21px 0;
   height: 1px;
   background-color: #aaa;
   line-height: 0;
@@ -47,7 +47,21 @@
   color: #777;
   font-size: 14px;
 }
-
 .display_book blockquote {
   margin: 0;
+}
+
+/* Entries listings
+*/
+#display_entries {
+  margin: auto;
+}
+.display_entries_in {
+  width: 49%;
+  float: left;
+}
+.display_entries_after {
+  clear: both;
+  text-align: center;
+  padding: 35px 0 7px 0;
 }

@@ -40,7 +40,7 @@
     echo $spaces . '    <div id="badge_main_contents">' . PHP_EOL;
     // User information is shown...
     echo $spaces . '    <div id="badge_user_info">' . PHP_EOL;
-    echo $spaces . '        <div id="badge_username">' . chop_length($_SESSION['username'], 17) . '</div>' . PHP_EOL;
+    echo $spaces . '        <div id="badge_username"><a href="/account.php">' . chop_length($_SESSION['username'], 17) . '</a></div>' . PHP_EOL;
     echo $spaces . '        <div id="badge_email">' . chop_length($_SESSION['email'], 21) . '</div>' . PHP_EOL;
     echo $spaces . '    </div>' . PHP_EOL;
     // ...on top of the logout button
@@ -94,7 +94,7 @@
     
     // Main header slogon
     echo '          <!-- Header Slogon -->' . PHP_EOL;
-    echo '          <h1>' . getSiteName() . '</h1>' . PHP_EOL . PHP_EOL;
+    echo '          <h1><a href="/">' . getSiteName() . '</a></h1>' . PHP_EOL . PHP_EOL;
     
     // Persistent search bar
     echo '          <!-- Search Bar -->' . PHP_EOL;

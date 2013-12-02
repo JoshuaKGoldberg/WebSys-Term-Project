@@ -50,7 +50,7 @@
       `google_id` VARCHAR(127),
       `title` VARCHAR(127),
       `authors` VARCHAR(255),
-      `description` VARCHAR(1023),
+      `description` VARCHAR(2047),
       `publisher` VARCHAR(127),
       `year` VARCHAR(15),
       `pages` VARCHAR(7),
@@ -72,7 +72,7 @@
   $dbConn->exec('
     CREATE TABLE IF NOT EXISTS `entries` (
       `entry_id` INT(10) NOT NULL AUTO_INCREMENT,
-      `isbn` INT(13) NOT NULL,
+      `isbn` VARCHAR(15) NOT NULL,
       `user_id` INT(10) NOT NULL,
       `name` VARCHAR(127) NOT NULL,
       `price` DECIMAL(19,4),
@@ -95,7 +95,7 @@
       `user_rater` INT(10) NOT NULL,
       `user_rated` INT(10) NOT NULL,
       `user_rating` ENUM(' . makeSQLEnum($historyRatings) . '),
-      `isbn` INT(13) NOT NULL,
+      `isbn` VARCHAR(15) NOT NULL,
       `action` ENUM(' . makeSQLEnum($bookActions) . '),
       PRIMARY KEY (`event_id`)
     )

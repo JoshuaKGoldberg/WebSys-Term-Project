@@ -199,6 +199,19 @@
     return $stmnt->fetchAll(PDO::FETCH_ASSOC);
   }
   
+  // dbBookEntriesGet(#isbn)
+  // Gets all the entires related to an isbn (rather than user_id)
+  function dbBookEntriesGet($dbConn, $isbn) {
+    $query = '
+      SELECT * FROM `entries`
+      WHERE `isbn` = :isbn
+    ';
+    $stmnt = getPDOStatement($dbConn, $query);
+    $stmnt->execute(array(':isbn' => $isbn));
+    
+    return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+  }
+  
   // dbEntriesAdd(#isbn, #user_id, #price, "state")
   // Adds an entry to `entries`
   // Sample usage: dbEntriesAdd($dbConn, $isbn, $user_id, 'Buy', 12.34, 'Fair');
