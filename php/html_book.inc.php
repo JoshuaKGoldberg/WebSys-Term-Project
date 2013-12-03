@@ -16,8 +16,8 @@
     $year = $info['year'];
     $pages = $info['pages'];
     
-    echo '<div class="display_book display_book_large width_standard">' . PHP_EOL;
-    printBookDisplayButtons(array('Buy', 'Sell'), $isbn, $google_id);
+    echo '<div class="display_book display_book_large">' . PHP_EOL;
+    printBookDisplayButtons(array('Buy', 'Sell', 'Add'), $isbn, $google_id);
     echo '  <img src="http://bks2.books.google.com/books?id=' . $google_id . '&printsec=frontcover&img=1&zoom=1&source=gbs_api" />' . PHP_EOL;
     echo '    <div class="display_book_info">' . PHP_EOL;
     echo '      <h1>' . $title . ' <aside>(' . $year . ')</aside></h1>' . PHP_EOL;
@@ -50,7 +50,11 @@
   }
   function printBookDisplayButton($action) {
     echo '<form class="book_display_action book_display_action_' . $action . '">' . PHP_EOL;
-    echo '  <span class="large thick">' . $action . '</span> for' . PHP_EOL;
+    if ($action == "Add") {
+      echo '  <span class="large thick">' . $action . '</span> to Wishlist' . PHP_EOL;
+    } else {
+      echo '  <span class="large thick">' . $action . '</span> for' . PHP_EOL;
+    }
     echo '  <div class="book_display_action_expanded"></div>' . PHP_EOL;
     echo '</form>' . PHP_EOL;
   }

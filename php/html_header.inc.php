@@ -64,7 +64,7 @@
     }
     
     // Main header slogon
-    echo '        <h1><a href="/">' . getSiteName() . '</a></h1>' . PHP_EOL;
+    echo '        <div id="slogan"><h1><a href="/">' . getSiteName() . '</a></h1></div>' . PHP_EOL;
     
     // Persistent search bar
     echo '        <!-- Search Bar -->' . PHP_EOL;

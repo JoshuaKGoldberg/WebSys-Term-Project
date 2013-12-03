@@ -10,6 +10,8 @@
   // Grab info on the book itself
   $dbConn = getPDOQuick();
   $book_info = dbBooksGet($dbConn, $isbn);
+
+  echo '<div id="wrapper"><div id="bookwrapper">';
   
   printBookDisplayLarge($isbn, $book_info);
   
@@ -24,6 +26,8 @@
   // There may be wrong information, provide a form for that
   echo '<aside class="display_entries_after">Wrong information here? <a href="mailto:' . getSiteEmail() . '">Let us know!</a></aside>' . PHP_EOL;
   
+  echo '</div></div>';
+
   page_end(array("books"));
   
   // Make the page auto-load via js
