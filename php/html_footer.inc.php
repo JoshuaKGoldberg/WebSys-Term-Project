@@ -7,9 +7,11 @@ function html_print_footer($js=false) {
   // Begin the footer
   echo '    <!-- Footer -->' . PHP_EOL;
   echo '    <footer>' . PHP_EOL;
-  echo '      Web Systems Development &mdash; Term Project' . PHP_EOL;
-  echo '      <hr />' . PHP_EOL;
-  echo '      Group Too! &mdash;  T.J. Callahan, Joshua Goldberg, Evan MacGregor, Candice Poon, &amp; Scott Sacci' . PHP_EOL;
+  echo '      <div class="width_standard main_standard">' . PHP_EOL;
+  echo '        Web Systems Development &mdash; Term Project' . PHP_EOL;
+  echo '        <hr />' . PHP_EOL;
+  echo '        Group Too! &mdash;  T.J. Callahan, Joshua Goldberg, Evan MacGregor, Candice Poon, &amp; Scott Sacci' . PHP_EOL;
+  echo '      </div>' . PHP_EOL;
   echo '    </footer>' . PHP_EOL;
   echo '  </body>' . PHP_EOL;
   echo PHP_EOL;
