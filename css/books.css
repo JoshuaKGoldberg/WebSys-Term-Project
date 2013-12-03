@@ -79,3 +79,30 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+/* Action buttons
+*/
+.book_display_actions {
+  float: right;
+  margin-top: 7px;
+}
+.book_display_action {
+  margin-top: 7px;
+  padding: 3px 7px;
+  border-radius: 14px;
+  border: 1px solid #919191;
+  cursor: pointer;
+  font-style: italic;
+  color: #494949;
+}
+.book_display_action .large {
+  font-size: 28px;
+  font-style: normal;
+  color: #333;
+}
+.book_display_action .large.thick {
+  font-weight: bold;
+}
+.book_display_action .large.lpad {
+  margin-left: 3px;
+}

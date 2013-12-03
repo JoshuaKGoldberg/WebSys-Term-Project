@@ -3,13 +3,18 @@ html, footer { background-color: #565656; }
 body { 
   background-color: #fdfdfd; 
   font-family: 'Lato';
-  
 }
 
-
+/* General
+*/
 h1, h2, h3 {
   font-family: 'Doppio One';
   text-shadow: 0 0 3px #eee;
+}
+a {
+  text-decoration: inherit;
+  font-style: inherit;
+  color: #CC5D25;
 }
 
 /* Header (general)
@@ -17,11 +22,6 @@ h1, h2, h3 {
 header {
   background-color: #eee;
   border-bottom: 7px solid white;
-}
-header a {
-  text-decoration: inherit;
-  font-style: inherit;
-  color: #CC5D25;
 }
 #header_main {
   display: table;

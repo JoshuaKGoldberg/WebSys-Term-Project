@@ -1,10 +1,10 @@
 <?php
   require_once('php/html_helpers.php');
-  require_once('php/html_book.php.inc');
+  require_once('php/html_book.inc.php');
   page_start(array("books"));
   
   if(!isset($_GET['isbn']))
-    header('Location: "/index.php"');
+    header('Location: index.php');
   $isbn = $_GET['isbn'];
   
   // Grab info on the book itself

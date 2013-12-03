@@ -1,8 +1,8 @@
 <?php
   require_once('settings.php');
   require_once('db_actions.php');
-  require_once('html_header.php.inc');
-  require_once('html_footer.php.inc');
+  require_once('html_header.inc.php');
+  require_once('html_footer.inc.php');
   
   // page_start(["css"])
   // Start a page, including the correct PHP and CSS files and printing the header
