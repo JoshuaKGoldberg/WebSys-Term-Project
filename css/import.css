@@ -1,0 +1,59 @@
+#import_manual_label {
+  margin: 28px auto 0 auto;
+}
+
+#import_manual_label,
+#import_manual {
+  text-align: center;
+  font-size: 35px;
+}
+
+#import_manual input {
+  margin: 14px auto;
+  width: 490px;
+  height: 49px;
+  font-size: 42px;
+  text-align: center;
+}
+
+#import_manual_thinking {
+  margin: auto;
+  height: 0;
+  width: 42px;
+  overflow: hidden;
+  text-align: center;
+  transition: 350ms all;
+}
+#import_manual_thinking.thinking {
+  height: 21px;
+  padding: 3px 7px;
+  background: #333;
+  color: #eee;
+  border-radius: 7px;
+}
+
+#import_manual_results {
+  margin-bottom: 21px;
+  text-align: center;
+  font-size: 21px;
+}
+
+#import_manual_results p {
+  margin: 28px 0 21px 0;
+  height: 1px;
+  background-color: #aaa;
+  line-height: 0;
+  text-align: center;
+}
+#import_manual_results aside {
+  display: inline;
+  padding: 0 7px 0 3px;
+  height: 3px;
+  background-color: #fcfcfc;
+}
+#import_manual_results aside.success {
+  color: #171;
+}
+#import_manual_results aside.failure {
+  color: #711;
+}

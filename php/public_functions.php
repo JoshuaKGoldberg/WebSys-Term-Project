@@ -101,8 +101,11 @@
     if(!$title || !$authors)
       return;
     
-    if(dbBooksAdd($dbConn, $isbn, $googleID, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose)
+    if(dbBooksAdd($dbConn, $isbn, $googleID, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose) {
       echo 'Yes';
+      return true;
+    }
+    return false;
   }
 
   // publicSearch({...})
@@ -156,5 +159,61 @@
     // Return a JSON encoding of the results
     $result = $stmnt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($result);
+  }
+  
+  // publicGetSIS
+  // Simply outputs the HTTP page of the specified SIS page
+  // No required fields!
+  function publicGetSIS($arguments=false, $noverbose=false) {
+    echo getHTTPPage(getSISAPI());
+  }
+  
+  function publicGetSISBookISBN($arguments=false) {
+    // // Get the raw page itself
+    // $url_arguments = $arguments['url_arguments'];
+    // $page = getHTTPPage($getSISPageStart() . $urlArguments);
+    
+    // echo "temp1";
+    
+    // Filter for just the ISBN
+    // $key = "<strong>ISBN:</strong>";
+    // $loc = strpos($page, $key); // Ending right before the space
+    // $loc = strpos($page, " ", $loc) + 1; // The one after the space
+    // $loc_end = strpos($page, "<br/>", $loc);
+    
+    // $result = substr($page, $loc, $loc_end - $loc);
+    // echo $result;
+    echo "hi";
+  }
+  
+  // publicISBNCheck({...})
+  // Goes through the motions of checking if an ISBN is in the database
+  // If it isn't, it calls the function to add the book 
+  function publicISBNCheck($arguments) {
+    $dbConn = getPDOQuick();
+    $isbn = $arguments['isbn'];
+    
+    // Does the ISBN exist?
+    if(checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
+      echo '<aside>ISBN ' . $isbn . ' is already in our database as ';
+      echo '<a href="books.php?isbn=' . $isbn . '">';
+      echo getRowValue($dbConn, 'books', 'title', 'isbn', $isbn);
+      echo '</a>.</aside>';
+      return;
+    }
+    
+    // Since it doesn't yet, attempt to add it
+    $added = publicAddBook($arguments);
+    
+    // If that was successful, hooray!
+    if($added) {
+      echo '<aside class="success">ISBN ' . $isbn . ' was added to our database as ';
+      echo '<a href="books.php?isbn=' . $isbn . '">';
+      echo getRowValue($dbConn, 'books', 'title', 'isbn', $isbn);
+      echo '</a>.</aside>';
+      return;
+    }
+    // Otherwise nope
+    echo '<aside class="failure">ISBN ' . $isbn . ' returned no results.</aside>';
   }
 ?>

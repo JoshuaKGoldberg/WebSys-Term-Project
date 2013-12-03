@@ -3,9 +3,7 @@
   page_start(array("mainpage"));
   ensure_logged_out();
 ?>
-
     
-
     <!-- Section 1 (main slogan) -->
     <section id="center">
       <div class="aligner">
@@ -73,14 +71,3 @@
     </section>
     
 <?php page_end(array("mainpage")); ?>
-
-<?php
-	$int = rand(0,3);
-	if ($int == 0):
-	?>
-
-<script>$("head").append('<style type="text/css">body { background-image:url(\'./images/plotka.jpg\');background-color:"red";};</style>');</script>
-<?php
-		endif;
-		?>
-

@@ -20,13 +20,19 @@
   $dbPass = getDBPass();
   $dbName = getDBName();
   
+  // SIS API (zs 2013 '09)
+  function getSISAPI() { return "http://sis.rpi.edu/reg/zs201309.htm"; }
+  // SIS Page Start
+  function getSISPageStart() { return "http://www.bkstr.com/webapp/wcs/stores/servlet/booklookServlet?"; }
+  
   // Google API
   function getGoogleKey() { return "AIzaSyD2FxaIBhdLTA7J6K5ktG4URdCFmQZOCUw"; }
-  $sample_isbns = array('9780073523323', '9780072463521', '9780199959570', '9780130673893', '9780873895620', '9780073341521', '9780470458365', '9780538733519', '9780470115398', '9780123850737', '9780070168930', '9780538482127', '9781893281080', '9780273713630', '9780132168380', '9781422162606', '9789970086979', '9780133063004', '9780078029103', '9781133586548', '9780521148436', '9780521066013', '9780393310351', '9781608193387', '9780133020267', '9780133058789', '9780078112621');
+  // $sample_isbns = array('9780073523323', '9780072463521', '9780199959570', '9780130673893', '9780873895620', '9780073341521', '9780470458365', '9780538733519', '9780470115398', '9780123850737', '9780070168930', '9780538482127', '9781893281080', '9780273713630', '9780132168380', '9781422162606', '9789970086979', '9780133063004', '9780078029103', '9781133586548', '9780521148436', '9780521066013', '9780393310351', '9781608193387', '9780133020267', '9780133058789', '9780078112621');
+  $sample_isbns = array('9780073523323');
   
   // Names of functions that may be called by functions.php
   $allowed_functions = array(
-    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook', 'publicSearch', 'publicGetBookEntries'
+    'publicLogin', 'publicCheckValidity', 'publicCreateUser', 'publicAddBook', 'publicSearch', 'publicGetBookEntries', 'publicGetSIS', 'publicISBNCheck'
   );
   foreach($allowed_functions as $name)
     $allowed_functions[$name] = true;

@@ -167,7 +167,7 @@ input {
   border-radius: 7px;
   outline: 0;
   font-size: 21px;
-  font-family: serif;
+  font-family: 'Lato', serif;
 }
 input[type=submit] {
   width: 100%;
@@ -216,4 +216,7 @@ a.normal {
 */
 .width_standard {
   width: 1015px;
+}
+.main_standard {
+  margin: auto;
 }
