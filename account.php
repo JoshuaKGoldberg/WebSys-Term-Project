@@ -10,6 +10,7 @@
     $user_id = $_SESSION['user_id'];
     if (isset($_SESSION['email'])) $email = $_SESSION['email'];
     if (isset($_SESSION['major'])) $major = $_SESSION['major'];
+    if (isset($_SESSION['fname']) && isset($_SESSION['lname'])) $name = $_SESSION['fname'] . " " . $_SESSION['lname'];
   } else {
     header('Location: ../');
   }
@@ -34,58 +35,61 @@
   <div id="listwrapper">
     <section id="wishlist" class="booklist">
       <h3>Wishlist</h3>
-      <div id="listitem">
-        <?php
+      <?php
 
-        $user_wishes = dbEntriesGet($dbConn, $user_id, "Wish");
-        if (isset($user_wishes)){ 
-          if (count($user_wishes) == 0) {
-            echo "<p style='text-align:center'>You have nothing on your wishlist.</p><p style='text-align:center'><a href=''>Add something!</a></p>";
-          } else {
-            foreach ($user_wishes as $book) {
-              # code...
-
-              //<img src="../images/book-cover-placeholder.png" height="86" width="86">
-              //<p>Title</p>
-              //<p>ISBN</p>
-            }
-          }
+      $user_wishes = dbEntriesGet($dbConn, $user_id, "Wish");
+      if (isset($user_wishes)){ 
+        if (count($user_wishes) == 0) {
+          echo "<div id='listitem'>
+                  <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your wishlist.</p>
+                  <p style='text-align:center'>
+                    <a href=''>Add something!</a>
+                  </p>
+                </div>";
         } else {
-          echo "<p>Nothing returned.</p>";
-        }
+          foreach ($user_wishes as $book) {
+            # code...
 
-        ?>
-      </div>
+            //<img src="../images/book-cover-placeholder.png" height="86" width="86">
+            //<p>Title</p>
+            //<p>ISBN</p>
+          }
+        }
+      } else {
+        echo "<p>Nothing returned.</p>";
+      }
+
+      ?>
     </section>
     <section id="tradelist" class="booklist">
       <h3>Tradelist</h3>
-      <div id="listitem">
-        <?php
+      <?php
 
-        $user_trades = dbEntriesGet($dbConn, $user_id, "Trade");
-        if (isset($user_trades)){ 
-          if (count($user_trades) == 0) {
-            echo "<p style='text-align:center'>You have nothing on your tradelist.</p><p style='text-align:center'><a href=''>Add something!</a></p>";
-          } else {
-            foreach ($user_trades as $book) {
-              # code...
-
-              //<img src="../images/book-cover-placeholder.png" height="86" width="86">
-              //<p>Title</p>
-              //<p>ISBN</p>
-            }
-          }
+      $user_trades = dbEntriesGet($dbConn, $user_id, "Trade");
+      if (isset($user_trades)){ 
+        if (count($user_trades) == 0) {
+        echo "<div id='listitem'>
+                <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your tradelist.</p>
+                <p style='text-align:center'>
+                  <a href=''>Add something!</a>
+                </p>
+              </div>";
         } else {
-          echo "<p>Nothing returned.</p>";
-        }
+          foreach ($user_trades as $book) {
+            # code...
 
-        ?>
-      </div>
+            //<img src="../images/book-cover-placeholder.png" height="86" width="86">
+            //<p>Title</p>
+            //<p>ISBN</p>
+          }
+        }
+      } else {
+        echo "<p>Nothing returned.</p>";
+      }
+
+      ?>
     </section>
   </div>
-
-  <!-- Temporary fix... -->
-  <div id="nope" style="clear:both;"></div>
 
 <!-- Footer -->
 <?php html_print_footer(); ?>

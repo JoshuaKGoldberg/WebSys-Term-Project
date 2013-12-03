@@ -32,11 +32,9 @@ header {
 header h1 {
   margin: 0;
   padding-bottom: 7px;
-  width: 700px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  text-align: left;
 }
 
 /* Search (general)
@@ -53,7 +51,7 @@ header h1 {
 }
 #header_search_form input[type=text] {
   height: 35px;
-  width: 280px;
+  width: 247px;
   padding-left: 14px;
   background-color: #fcfcfc;
   border-radius: 14px 21px 14px 14px;
@@ -122,6 +120,7 @@ header h1 {
   position: absolute;
   top: 0;
   width: 268px;
+  z-index:5;
 }
 #badge img {
   width: 84px;
@@ -134,7 +133,10 @@ header h1 {
 #badge_main {
   position: absolute;
   right: 0;
-  text-align: right;
+  text-align: center;
+}
+#badge_image {
+  height:84px;
 }
 #badge_user_info {
   height: 42px;
@@ -150,13 +152,14 @@ header h1 {
 }
 #badge input[type=submit] {
   margin-top: 3px;
-  width: 182px;
-  height: 35px;
+  width: 160px;
+  height: 26px;
   background-color: #ccc;
   border: solid #aaa;
   border-width: 2px 1px 1px 1px;
-  border-radius: 0;
-  font-size: 14px;
+  border-radius: 3px;
+  font-family: 'Lato';
+  font-size: 12px;
   font-style: normal;
 }
 

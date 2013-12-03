@@ -1,16 +1,43 @@
+header {
+  box-shadow:0 0 10px black;
+}
+
+#slogan {
+  position:absolute;
+  text-align:center;
+  width:1015px;
+  top:22px;
+}
+
+header h1 {
+  margin:0 auto;
+  text-align:center;
+  display:block;
+  padding-bottom:0;
+  vertical-align:middle;
+}
+
+#header_search {
+  display: table;
+  height: 84px;
+  float: right;
+  margin-right: 0;
+  top: 0;
+}
 
 #listwrapper {
-    margin-left:auto;
-    margin-right:auto;
-    width:1015px;
+  margin-left:auto;
+  margin-right:auto;
+  width:1015px;
 }
 
 .booklist {
-    font-family: 'Doppio One';
-    padding:10px;
-    margin-top:45px;
-    width:30em;
-
+  font-family: 'Doppio One';
+  padding:10px;
+  margin-top:45px;
+  width:30em;
+  border-radius:5px;
+  box-shadow:0 0 10px black;
 }
 
 h3 {
@@ -34,6 +61,7 @@ h3 {
   margin-right:10px;
   padding:10px;
   background-color:#485664;
+  border-radius:3px;
 }
 
 #listitem p {
@@ -43,4 +71,29 @@ h3 {
 #listitem img {
   vertical-align: center;
   float:left;
+}
+
+footer {
+  position:absolute;
+  padding: 14px 0;
+  text-align: center;
+  bottom:0;
+  width:100%;
+  font-size: 1.26em;
+  color: white;
+  border-top: 7px solid #ccc;
+    box-shadow:0 0 10px black;
+  /* ColorZilla gradient */
+  background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
+}
+
+footer hr {
+  width: 350px;
+  border: 1px dashed #ccc;
 }
