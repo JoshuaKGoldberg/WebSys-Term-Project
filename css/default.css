@@ -1,7 +1,7 @@
 html, body { margin: 0; }
-html, footer { background-color: #565656; }
+footer { background-color: #565656; }
 body { 
-  background-color: #fdfdfd; 
+  background-color: #686868; 
   font-family: 'Lato';
 }
 
@@ -20,8 +20,12 @@ a {
 /* Header (general)
 */
 header {
+  top:0;
+  position:fixed;
   background-color: #eee;
   border-bottom: 7px solid white;
+  width:100%;
+  box-shadow:0 0 10px black;
 }
 #header_main {
   position: relative;
@@ -30,12 +34,20 @@ header {
   width: 1015px;
   height: 84px;
 }
+
 header h1 {
-  margin: 0;
-  padding-bottom: 7px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  margin:0 auto;
+  text-align:center;
+  display:block;
+  padding-bottom:0;
+  vertical-align:middle;
+}
+
+#slogan {
+  position:absolute;
+  text-align:center;
+  width:1015px;
+  top:22px;
 }
 
 /* Search (general)
@@ -182,12 +194,16 @@ input[type=submit] {
 /* Footer
 */
 footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
   padding: 14px 0;
   text-align: center;
   font-size: 1.26em;
   color: white;
   border-top: 7px solid #ccc;
   text-shadow: 0 1px black;
+  box-shadow:0 0 10px black;
   /* ColorZilla gradient */
   background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */

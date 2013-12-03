@@ -1,6 +1,6 @@
 <?php 
   require_once('php/html_helpers.php');
-  page_start(array("accountpage"));
+  page_start(array("account"));
   ensure_logged_in();
 
   $username = $_SESSION['username'];
@@ -72,5 +72,4 @@
     <p id="after_lists">You can also <a href="import.php">import</a> books to our database.</p>
   </div>
 
-<!-- Footer -->
-<?php html_print_footer(); ?>
+<?php page_end(); ?>
