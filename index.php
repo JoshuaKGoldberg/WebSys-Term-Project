@@ -1,6 +1,7 @@
 <?php 
   require_once('php/html_helpers.php');
   page_start(array("mainpage"));
+  ensure_logged_out();
 ?>
     
     <!-- Section 1 (main slogan) -->

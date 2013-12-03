@@ -16,7 +16,7 @@
     $year = $info['year'];
     $pages = $info['pages'];
     
-    echo '<div class="display_book display_book_large">' . PHP_EOL;
+    echo '<div class="display_book display_book_large width_standard">' . PHP_EOL;
     printBookDisplayButtons(array('Buy', 'Sell'), $isbn, $google_id);
     echo '  <img src="http://bks2.books.google.com/books?id=' . $google_id . '&printsec=frontcover&img=1&zoom=1&source=gbs_api" />' . PHP_EOL;
     echo '    <div class="display_book_info">' . PHP_EOL;
