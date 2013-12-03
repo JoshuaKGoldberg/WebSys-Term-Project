@@ -1,5 +1,5 @@
 #listwrapper {
-  margin-top:119px;
+  margin-top:126px;
   margin-left:auto;
   margin-right:auto;
   width:1015px;
@@ -55,4 +55,8 @@ h3 {
   padding-top: 21px;
   clear: both;
   text-align: center;
+}
+
+footer {
+  position:fixed;
 }

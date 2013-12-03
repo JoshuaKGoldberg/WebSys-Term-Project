@@ -5,6 +5,7 @@
 ?>
     
     <!-- Section 1 (main slogan) -->
+  <div id="wrapper">
     <section id="center">
       <div class="aligner">
         <div class="container">
@@ -69,5 +70,6 @@
           </div>
         </div>
     </section>
-    
+  </div>
+  
 <?php page_end(array("mainpage")); ?>

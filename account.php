@@ -20,19 +20,24 @@
       $user_wishes = dbEntriesGet($dbConn, $user_id, "Wish");
       if (isset($user_wishes)){ 
         if (count($user_wishes) == 0) {
-          echo "<div id='listitem'>
-                  <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your wishlist.</p>
-                  <p style='text-align:center'>
-                    <a href=''>Add something!</a>
-                  </p>
-                </div>";
+          echo "<div id='listitem'>" . PHP_EOL;
+          echo "  <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your wishlist.</p>" . PHP_EOL;
+          echo "  <p style='text-align:center'>" . PHP_EOL;
+          echo "    <a href=''>Add something!</a>" . PHP_EOL;
+          echo "  </p>" . PHP_EOL;
+          echo "</div>" . PHP_EOL;
         } else {
-          foreach ($user_wishes as $book) {
-            # code...
-
-            //<img src="../images/book-cover-placeholder.png" height="86" width="86">
-            //<p>Title</p>
-            //<p>ISBN</p>
+          foreach ($user_wishes as $entry) {
+            $isbn = $entry['isbn'];
+            $book_info = dbBooksGet($dbConn, $isbn);
+            $google_id = $info['google_id'];
+            $title = $info['title'];
+            echo "<div id='listitem'>" . PHP_EOL;
+            if (isset($google_id)) { echo "  <img src='http://bks2.books.google.com/books?id=" . $google_id . "&printsec=frontcover&img=1&zoom=1&source=gbs_api' height='86' width='53' />" . PHP_EOL; }
+            else { echo "  <img src='../images/book-cover-placeholder.png' height='86' width='53' />" . PHP_EOL; }
+            echo "  <p>" . $title . "</p>" . PHP_EOL;
+            echo "  <p>" . $isbn . "</p>" . PHP_EOL;
+            echo "</div>" . PHP_EOL;
           }
         }
       } else {
@@ -48,19 +53,24 @@
       $user_trades = dbEntriesGet($dbConn, $user_id, "Trade");
       if (isset($user_trades)){ 
         if (count($user_trades) == 0) {
-        echo "<div id='listitem'>
-                <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your tradelist.</p>
-                <p style='text-align:center'>
-                  <a href=''>Add something!</a>
-                </p>
-              </div>";
+        echo "<div id='listitem'>" . PHP_EOL;
+          echo "  <p style='text-align:center; text-shadow:0 0 10px gray'>You have nothing on your tradelist.</p>" . PHP_EOL;
+          echo "  <p style='text-align:center'>" . PHP_EOL;
+          echo "    <a href=''>Add something!</a>" . PHP_EOL;
+          echo "  </p>" . PHP_EOL;
+          echo "</div>" . PHP_EOL;
         } else {
           foreach ($user_trades as $book) {
-            # code...
-
-            //<img src="../images/book-cover-placeholder.png" height="86" width="86">
-            //<p>Title</p>
-            //<p>ISBN</p>
+            $isbn = $entry['isbn'];
+            $book_info = dbBooksGet($dbConn, $isbn);
+            $google_id = $info['google_id'];
+            $title = $info['title'];
+            echo "<div id='listitem'>" . PHP_EOL;
+            if (isset($google_id)) { echo "  <img src='http://bks2.books.google.com/books?id=" . $google_id . "&printsec=frontcover&img=1&zoom=1&source=gbs_api' height='86' width='53' />" . PHP_EOL; }
+            else { echo "  <img src='../images/book-cover-placeholder.png' height='86' width='53' />" . PHP_EOL; }
+            echo "  <p>" . $title . "</p>" . PHP_EOL;
+            echo "  <p>" . $isbn . "</p>" . PHP_EOL;
+            echo "</div>" . PHP_EOL;
           }
         }
       } else {

@@ -12,7 +12,8 @@
       session_start();
     
     // Add the default CSS
-    $css[] = "default";
+    //$css[] = "default";
+    array_unshift($css, "default");
     
     // Print the header, using the required CSS files
     html_print_header($css);
