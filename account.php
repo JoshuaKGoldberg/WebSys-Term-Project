@@ -1,39 +1,19 @@
-<?php
-  require_once('php/settings.php');
-  require_once('php/db_actions.php');
-  require_once('php/html_header.inc.php');
-  require_once('php/html_footer.inc.php');
-  session_start();
+<?php 
+  require_once('php/html_helpers.php');
+  page_start(array("accountpage"));
+  ensure_logged_in();
 
-  if(isset($_SESSION['Logged In']) && isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
-    $username = $_SESSION['username'];
-    $user_id = $_SESSION['user_id'];
-    if (isset($_SESSION['email'])) $email = $_SESSION['email'];
-    if (isset($_SESSION['major'])) $major = $_SESSION['major'];
-    if (isset($_SESSION['fname']) && isset($_SESSION['lname'])) $name = $_SESSION['fname'] . " " . $_SESSION['lname'];
-  } else {
-    header('Location: ../');
-  }
-
-  if (isset($_SESSION['username']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
-    // end the session here
-    unset($_SESSION['Logged In']);
-    session_unset(); 
-    session_destroy();
-    $err = 'You have been logged out.';
-    header('Location: ../');
-    exit();
-  }
+  $username = $_SESSION['username'];
+  $user_id = $_SESSION['user_id'];
+  if(isset($_SESSION['email'])) $email = $_SESSION['email'];
+  if(isset($_SESSION['major'])) $major = $_SESSION['major'];
+  if(isset($_SESSION['fname']) && isset($_SESSION['lname'])) $name = $_SESSION['fname'] . " " . $_SESSION['lname'];
 
   $dbConn = getPDOQuick();
-
 ?>
 
-<!-- Header -->
-<?php html_print_header("account"); ?>
-
   <div id="listwrapper">
-    <section id="wishlist" class="booklist">
+    <div id="wishlist" class="booklist">
       <h3>Wishlist</h3>
       <?php
 
@@ -60,8 +40,8 @@
       }
 
       ?>
-    </section>
-    <section id="tradelist" class="booklist">
+    </div>
+    <div id="tradelist" class="booklist">
       <h3>Tradelist</h3>
       <?php
 
@@ -88,7 +68,8 @@
       }
 
       ?>
-    </section>
+    </div>
+    <p id="after_lists">You can also <a href="import.php">import</a> books to our database.</p>
   </div>
 
 <!-- Footer -->
