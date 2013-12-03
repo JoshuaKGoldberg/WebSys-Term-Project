@@ -20,6 +20,11 @@ function joinSubmit() {
 	return;
   }	 
  
+  if (!/@rpi.edu$/.test(email)) {
+	joinComplainOn("email", "This is not a valid email address (Requires RPI email address)");
+	return;
+  }
+ 
   // Stop the user from accidentally spamming requests
   var joinSubmitOld = window.joinSubmit;
   window.joinSubmit = false;
