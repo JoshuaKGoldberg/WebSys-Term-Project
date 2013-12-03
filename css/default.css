@@ -190,7 +190,6 @@ footer {
   font-size: 1.26em;
   color: white;
   border-top: 7px solid #ccc;
-  text-shadow: 0 1px black;
   /* ColorZilla gradient */
   background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */
