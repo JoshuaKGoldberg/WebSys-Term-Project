@@ -1,8 +1,8 @@
 <?php
   require_once('php/settings.php');
   require_once('php/db_actions.php');
-  require_once('php/html_header.php.inc');
-  require_once('php/html_footer.php.inc');
+  require_once('php/html_header.inc.php');
+  require_once('php/html_footer.inc.php');
   session_start();
 
   if(isset($_SESSION['Logged In']) && isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
