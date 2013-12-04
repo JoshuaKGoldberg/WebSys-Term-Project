@@ -7,6 +7,9 @@ body {
 
 /* General
 */
+h1 {
+  font-size: 35px;
+}
 h1, h2, h3 {
   font-family: 'Doppio One';
   text-shadow: 0 0 3px #eee;
@@ -194,8 +197,6 @@ input[type=submit] {
 /* Footer
 */
 footer {
-  position:relative;
-  bottom:0;
   width:100%;
   padding: 14px 0;
   text-align: center;
@@ -204,24 +205,17 @@ footer {
   border-top: 7px solid #ccc;
   text-shadow: 0 1px black;
   /* ColorZilla gradient */
-  background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(86,86,86) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(86,86,86))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(86,86,86) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top,  rgb(73,73,73) 0%, rgb(104,104,104) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(73,73,73)), color-stop(100%,rgb(104,104,104))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgb(73,73,73) 0%,rgb(104,104,104) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgb(73,73,73) 0%,rgb(104,104,104) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgb(73,73,73) 0%,rgb(104,104,104) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgb(73,73,73) 0%,rgb(104,104,104) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#104,104,104',GradientType=0 ); /* IE6-9 */
 }
 footer hr {
   width: 350px;
   border: 1px dashed #ccc;
-}
-
-/* Standardized things (general)
-*/
-a.normal {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* Standardized widths
@@ -231,4 +225,22 @@ a.normal {
 }
 .main_standard {
   margin: auto;
+}
+.body_standard {
+  margin-top: 117px;
+  padding: 15px;
+  background-color: #fdfdfd;
+  border-radius: 11px;
+  box-shadow: 0 0 11px black;
+}
+.width_standard.body_standard {
+  width: 985px; /* for the 15px padding */
+  margin-bottom: 28px;
+}
+.body_standard > h1:first-child/*,
+.body_standard > h2:first-child,
+.body_standard > h3:first-child,
+.body_standard > h4:first-child*/ {
+  margin: 28px auto 42px auto;
+  text-align: center;
 }

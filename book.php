@@ -11,7 +11,7 @@
   $dbConn = getPDOQuick();
   $book_info = dbBooksGet($dbConn, $isbn);
 
-  echo '<div id="wrapper"><div id="bookwrapper">';
+  echo '<div id="wrapper" class="main_standard width_standard body_standard"><div id="bookwrapper">';
   
   printBookDisplayLarge($isbn, $book_info);
   
