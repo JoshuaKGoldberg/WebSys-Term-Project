@@ -1,5 +1,18 @@
-body { 
-  background-color: #565656;
+#wrapper {
+  margin-top:126px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:35px;
+  width:1015px;
+  padding:0;
+  box-shadow:0 0 0 black;
+}
+
+#bookwrapper {
+  border-radius:11px;
+  box-shadow:0 0 11px black;
+  background-color: #fdfdfd;
+  padding:15px;
 }
 
 /* Large (full) displays
