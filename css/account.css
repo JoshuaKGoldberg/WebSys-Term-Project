@@ -1,5 +1,56 @@
-#listwrapper {
+#before_lists {
+  text-shadow:0 0 5px #565656;
+  clear:both;
+  text-align:center;
   margin-top:126px;
+}
+
+#account-info {
+  margin-top:0;
+  margin-bottom:25px;
+}
+
+/*forms*/
+#form {
+  padding-right: 7px;
+}
+.input_holder {
+  display: inline;
+}
+.form_row {
+  position: relative;
+  margin-bottom:30px;
+  height: 49px;
+}
+.input_holder  {
+  position: absolute;
+}
+.input_holder:nth-of-type(2) {
+  right:10px;
+}
+.input_half {
+  width: 48.5%;
+}
+.input_two-thirds {
+  width: 65%;
+}
+.input_one-third {
+  width: 32%;
+}
+.form_input {
+  height: 42px;
+  width: 100%;
+}
+.form_aside {
+  position: absolute;
+  right: 0;
+  font-size: 21px;
+  font-style: italic;
+}
+
+/*lists*/
+#listwrapper {
+  margin-top:25px;
   margin-left:auto;
   margin-right:auto;
   width:1015px;
@@ -9,7 +60,7 @@
   font-family: 'Doppio One';
   padding:10px;
   width:30em;
-  border-radius:5px;
+  border-radius:11px;
   box-shadow:0 0 10px black;
 }
 
@@ -41,7 +92,7 @@ h3 {
   padding:10px;
   border:1px solid black;
   background-color:#ccc;
-  border-radius:3px;
+  border-radius:5px;
   overflow:hidden;
 }
 

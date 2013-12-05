@@ -72,3 +72,12 @@
   display: inline;
   color: #424242;
 }
+
+#after_search {
+  text-shadow:0 0 5px #565656;
+  padding-top:21px;
+  clear:both;
+  text-align:center;
+  margin-top:50px;
+  margin-bottom:100px;
+}
