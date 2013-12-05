@@ -1,3 +1,8 @@
+/* Manual Imports
+ * Allow the user to add in any amount of text
+ * This parses the text for 10- and 13-digit ISBNs
+ * Those ISBNs are send to publicISBNCheck
+*/
 // Called when the isbn input gets a new value
 function importManualOnChange(event) {
   setTimeout(function() {
@@ -96,4 +101,12 @@ function getDistinctArray(arr) {
       dups[hash] = true;
       return !is_dup;
   });
+}
+
+/* Automated imports
+ * Specify a field and a value to search on
+ * This repeatedly calls publicImportAllISBNs
+*/
+function importStartAutomated() {
+  
 }

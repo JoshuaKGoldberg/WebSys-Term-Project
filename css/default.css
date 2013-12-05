@@ -29,6 +29,7 @@ header {
   border-bottom: 7px solid white;
   width:100%;
   box-shadow:0 0 10px black;
+  z-index: 7;
 }
 #header_main {
   position: relative;

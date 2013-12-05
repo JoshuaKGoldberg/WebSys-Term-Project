@@ -14,15 +14,21 @@
     <div id='import_manual_thinking'>hmm...</div>
     <p id='import_manual_results' class='main_standard'></p>
     
-    <?php if(isset($_GET['hint'])) : ?>
-      <div id='import_manual_hint'>
-        <!--<aside>A few smaller places to start might be...</aside>
-        <ul>
-           <li><a href="http://www.folger.edu/template.cfm?cid=1339">Shakespeare's Works</a></li>
-        </ul>-->
-        <aside>You might want to read <a href="http://www.quora.com/ISBN-Numbers/Where-can-I-find-a-list-of-ISBNs-for-all-of-the-books-published-over-the-last-5-or-10-years">this</a>.</aside>
-      </div>
-    <?php endif ?>
+    <?php // if($_SESSION['role'] == '1'): ?>
+      <!-- Since the user is an administrator, display the automated import options -->
+      <aside id='import_auto_aside'>Alternately, since you're an administrator, you can auto-import from the Google API.</aside>
+      <form id='import_auto_form' action="event.preventDefault(); ">
+        When
+        <select id='import_auto_field'>
+        
+        </select>
+        contains
+        <select id='import_auto_value'>
+        
+        </select>
+        <input id='import_auto_submit' type='button' value='Import!' />
+      </form>
+    <?php // endif ?>
     
   </div>
     

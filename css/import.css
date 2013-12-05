@@ -1,3 +1,6 @@
+/* Manual Imports
+*/
+
 #import_manual_label,
 #import_manual {
   text-align: center;
@@ -52,4 +55,27 @@
 }
 #import_manual_results aside.failure {
   color: #711;
+}
+
+/* Automated Imports
+*/
+
+#import_auto_aside {
+  text-align: center;
+  font-style: italic;
+  color: #333;
+}
+
+#import_auto_form {
+  text-align: center;
+}
+
+#import_auto_form select {
+  margin-top: 14px;
+}
+
+#import_auto_submit {
+  display: block;
+  margin: 14px auto 7px auto;
+  font-size: 28px;
 }

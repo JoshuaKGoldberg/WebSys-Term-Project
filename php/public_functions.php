@@ -76,18 +76,15 @@
     }
     
     // Attempt to get the first item in the list (which will be the book)
-    if(!isset($result->items) || !isset($result->items[0]))
-      return;
+    if(!isset($result->items) || !isset($result->items[0])) return;
     $book = $result->items[0];
     
     // Attempt to get the book's info (stored as volumeInfo)
-    if(!isset($book->volumeInfo))
-      return;
+    if(!isset($book->volumeInfo)) return;
     $info = $book->volumeInfo;
     
     // Don't continue if the title or authors are missing or blank
-    if(!isset($info->title) || !isset($info->authors))
-      return;
+    if(!isset($info->title) || !isset($info->authors)) return;
       
     $title = $info->title;
     $authors = $info->authors;
@@ -98,8 +95,7 @@
     $googleID = isset($book->id) ? $book->id : "";
     
     // Title and authors can't be blank, but other fields can be
-    if(!$title || !$authors)
-      return;
+    if(!$title || !$authors) return;
     
     if(dbBooksAdd($dbConn, $isbn, $googleID, $title, $authors, $description, $publisher, $year, $pages) && !$noverbose) {
       echo 'Yes';
