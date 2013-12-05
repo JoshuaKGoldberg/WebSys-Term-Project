@@ -196,7 +196,7 @@
     // Does the ISBN exist?
     if(checkKeyExists($dbConn, 'books', 'isbn', $isbn)) {
       echo '<aside>ISBN ' . $isbn . ' is already in our database as ';
-      echo '<a href="books.php?isbn=' . $isbn . '">';
+      echo '<a href="book.php?isbn=' . $isbn . '">';
       echo getRowValue($dbConn, 'books', 'title', 'isbn', $isbn);
       echo '</a>.</aside>';
       return;
@@ -208,7 +208,7 @@
     // If that was successful, hooray!
     if($added) {
       echo '<aside class="success">ISBN ' . $isbn . ' was added to our database as ';
-      echo '<a href="books.php?isbn=' . $isbn . '">';
+      echo '<a href="book.php?isbn=' . $isbn . '">';
       echo getRowValue($dbConn, 'books', 'title', 'isbn', $isbn);
       echo '</a>.</aside>';
       return;

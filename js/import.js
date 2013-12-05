@@ -2,7 +2,7 @@
 function importManualOnChange(event) {
   setTimeout(function() {
     // Look at all the potential ISBNs, split by whitespace
-    var values = $("#import_manual input").val().match(/\S+/g),
+    var values = filterISBNs($("#import_manual input").val()),
         jthinker = $("#import_manual_thinking"),
         thinker = jthinker[0],
         value, i;
@@ -31,10 +31,28 @@ function importManualOnChange(event) {
   });
 }
 
+// Filters a text for all ISBNs
+function filterISBNs(value) {
+  var raws = value.replace(new RegExp('-', 'g'), "").match(/\S+/g),
+      output = [],
+      raw, i;
+  for(i in raws) {
+    raw = raws[i].replace(/\D/g,'');
+    if(isValidISBN(raw)) {
+      // if(raw.length == 10) {
+        // output.push('978' + raw);
+        // output.push('979' + raw);
+      // }
+      output.push(raw);
+    }
+  }
+  return output;
+}
+
 // Only allows numbers of length 13
 // (no longer accept length-10, since they may start with 0)
 function isValidISBN(value) {
-  return value && !isNaN(value) && (/*value.length == 10 ||*/ value.length == 13);
+  return value && !isNaN(value) && (value.length == 10 || value.length == 13);
 }
 
 function importValuesNotRepeatedFilter(me) {
@@ -78,5 +96,4 @@ function getDistinctArray(arr) {
       dups[hash] = true;
       return !is_dup;
   });
-  
 }

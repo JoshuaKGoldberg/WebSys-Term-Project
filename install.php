@@ -8,7 +8,7 @@
    * 4. Create the `history` table
   */
   require_once('php/settings.php');
-  require_once('php/public_functions.php');
+  // require_once('php/public_functions.php');
   
   // Get a connection to the server (no specific database yet)
   $dbConn = getPDO($dbHost, '', $dbUser, $dbPass);
@@ -57,10 +57,6 @@
       PRIMARY KEY (`isbn`)
     )
   ');
-  // Also fill it with the default books
-  foreach($sample_isbns as $isbn) {
-    publicAddBook(array('isbn' => $isbn), true);
-  }
   
   // 4. Create the `entries` table
   // This contains the entries of books by users
@@ -103,4 +99,6 @@
   
   session_destroy();
   session_unset();
+  
+  header('Location: index.php');
 ?>
