@@ -1,6 +1,6 @@
 <?php 
   require_once('php/html_helpers.php');
-  page_start(array('search_full'));
+  page_start(array('search_full', 'books'));
   
   function searchPrintRow($left, $right, $classleft='half', $classright='half') {
     echo '<div class="search_form_row search_' . $classleft . ' search_' . $classright . '">' . PHP_EOL;
@@ -25,7 +25,7 @@
     <!-- The form itself -->
     <form id="search_form" onkeydown="searchFull();" action="event.preventDefault();">
       <?php
-        searchPrintRow('name', 'author(s)');
+        searchPrintRow('title', 'author(s)');
         searchPrintRow('description', 'year', 'two-thirds', 'one-third');
         searchPrintRow('isbn', 'publisher');
       ?>
@@ -35,7 +35,7 @@
     <div id="search_form_results"></div>
   </div>
     
-<?php page_end(array('search_full')); ?>
+<?php page_end(array('search_full', 'books')); ?>
 
 <!-- Auto-start the search -->
 <script type='text/javascript'> searchFullResults(); </script>
